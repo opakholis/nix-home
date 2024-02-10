@@ -1,4 +1,8 @@
-{ pkgs, ... }: {
+{ ... }: {
+  
+  imports = [
+    ./homebrew.nix
+  ];
 
   # Explicitly set the username and home directory.
   # https://daiderd.com/nix-darwin/manual/index.html#opt-users.users._name_.home
