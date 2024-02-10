@@ -17,7 +17,9 @@
   outputs = { self, nixpkgs, darwin, home-manager,  ... }: {
     darwinConfigurations."osx" = darwin.lib.darwinSystem {
       modules = [
-        ./configuration.nix
+        # Darwin configuration options
+        # https://daiderd.com/nix-darwin/manual/index.html
+        ./hosts/osx/default.nix
 
         # The flake-based setup of the Home Manager nix-darwin module
         # https://nix-community.github.io/home-manager/index.xhtml#sec-flakes-nix-darwin-module
