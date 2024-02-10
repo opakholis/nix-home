@@ -1,4 +1,12 @@
 { pkgs, ... }: {
+
+# Set explicit username and home directory for the user.
+# https://daiderd.com/nix-darwin/manual/index.html#opt-users.users._name_.home
+users.users.opakholis = {
+  name = "opakholis";
+  home = "/Users/opakholis";
+};
+
 # List packages installed in system profile. To search by name, run:
 # $ nix-env -qaP | grep wget
 environment.systemPackages =
