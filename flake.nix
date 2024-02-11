@@ -14,24 +14,15 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, darwin, home-manager,  ... }: {
+  outputs = { darwin, home-manager, ... }: {
     darwinConfigurations."osx" = darwin.lib.darwinSystem {
+      system = "aarch64-darwin";
       modules = [
-        # Darwin configuration options
-        # https://daiderd.com/nix-darwin/manual/index.html
-        ./hosts/osx/default.nix
-
         # The flake-based setup of the Home Manager nix-darwin module
-        # https://nix-community.github.io/home-manager/index.xhtml#sec-flakes-nix-darwin-module
         home-manager.darwinModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.opakholis = import ./home.nix;
 
-          # Optionally, use home-manager.extraSpecialArgs to pass
-          # arguments to home.nix
-        }
+        # Darwin configuration options
+        ./hosts/osx
       ];
     };
   };
