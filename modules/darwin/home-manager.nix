@@ -46,6 +46,8 @@ let user = "opakholis"; in
         # check the Home Manager release notes.
         stateVersion = "23.05";
       };
+
+      programs = {} // import ../shared/home-manager.nix { inherit pkgs; };
     };
   };
 }
