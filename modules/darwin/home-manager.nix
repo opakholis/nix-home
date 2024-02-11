@@ -1,8 +1,6 @@
 { pkgs, ... }:
 
-let
-  user = "opakholis";
-in
+let user = "opakholis"; in
 {
 
   # Explicitly set the username and home directory.
@@ -40,14 +38,14 @@ in
   home-manager = {
     useGlobalPkgs = true;
     users.${user} = { pkgs, ...}: {
-     home = {
-       packages = pkgs.callPackage ./packages.nix {};
+      home = {
+        packages = pkgs.callPackage ./packages.nix {};
 
-       # Should not change this value, even if you update Home Manager.
-       # If you do want to update the value, then make sure to first
-       # check the Home Manager release notes.
-       stateVersion = "23.05";
-     };
-   };
+        # Should not change this value, even if you update Home Manager.
+        # If you do want to update the value, then make sure to first
+        # check the Home Manager release notes.
+        stateVersion = "23.05";
+      };
+    };
   };
 }
