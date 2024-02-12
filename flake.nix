@@ -14,7 +14,11 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { darwin, home-manager, ... }: {
+  outputs = {
+    darwin,
+    home-manager,
+    ...
+  }: {
     darwinConfigurations."osx" = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       modules = [

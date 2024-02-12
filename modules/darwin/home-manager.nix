@@ -1,14 +1,12 @@
-{ pkgs, ... }:
-
-let user = "opakholis"; in
-{
-
+{pkgs, ...}: let
+  user = "opakholis";
+in {
   # Explicitly set the username and home directory.
   # https://daiderd.com/nix-darwin/manual/index.html#opt-users.users._name_.home
   users.users.${user} = {
-   name = "${user}";
-   home = "/Users/${user}";
-   shell = pkgs.zsh;
+    name = "${user}";
+    home = "/Users/${user}";
+    shell = pkgs.zsh;
   };
 
   # Enable homebrew
@@ -37,7 +35,7 @@ let user = "opakholis"; in
   # https://nix-community.github.io/home-manager/index.xhtml#sec-flakes-nix-darwin-module
   home-manager = {
     useGlobalPkgs = true;
-    users.${user} = { pkgs, ...}: {
+    users.${user} = {pkgs, ...}: {
       home = {
         packages = pkgs.callPackage ./packages.nix {};
 
@@ -47,7 +45,7 @@ let user = "opakholis"; in
         stateVersion = "23.05";
       };
 
-      programs = {} // import ../shared/home-manager.nix { inherit pkgs; };
+      programs = {} // import ../shared/home-manager.nix {inherit pkgs;};
     };
   };
 }

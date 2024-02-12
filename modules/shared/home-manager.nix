@@ -1,14 +1,10 @@
-{ pkgs, ... }:
-
-let
+{pkgs, ...}: let
   w0 = {
     name = "Opa Kholis Majid";
     email = "code@opakholis.space";
     signingKey = "B029ED5DC8722086";
   };
-in
-{
-
+in {
   # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.bat.enable
   bat = {
     enable = true;
@@ -57,15 +53,15 @@ in
     enable = true;
     settings = {
       gui.theme = {
-        activeBorderColor = [ "#babbf1"  "bold" ];
-        inactiveBorderColor = [ "#a5adce" ];
-        optionsTextColor = [ "#8caaee" ];
-        selectedLineBgColor = [ "#414559" ];
-        cherryPickedCommitBgColor = [ "#51576d" ];
-        cherryPickedCommitFgColor = [ "#babbf1" ];
-        unstagedChangesColor = [ "#c6d0f5" ];
-        defaultFgColor = [ "#c6d0f5" ];
-        searchingActiveBorderColor = [ "#e5c890" ];
+        activeBorderColor = ["#babbf1" "bold"];
+        inactiveBorderColor = ["#a5adce"];
+        optionsTextColor = ["#8caaee"];
+        selectedLineBgColor = ["#414559"];
+        cherryPickedCommitBgColor = ["#51576d"];
+        cherryPickedCommitFgColor = ["#babbf1"];
+        unstagedChangesColor = ["#c6d0f5"];
+        defaultFgColor = ["#c6d0f5"];
+        searchingActiveBorderColor = ["#e5c890"];
       };
     };
   };
@@ -79,7 +75,7 @@ in
     prefix = "C-Space";
 
     plugins = with pkgs.tmuxPlugins; [
-    sensible
+      sensible
       {
         plugin = resurrect;
         extraConfig = ''
