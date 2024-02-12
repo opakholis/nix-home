@@ -23,6 +23,25 @@
     };
   };
 
+  # TODO: use nix-colors
+  # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.lazygit.enable
+  lazygit = {
+    enable = true;
+    settings = {
+      gui.theme = {
+        activeBorderColor = [ "#babbf1"  "bold" ];
+        inactiveBorderColor = [ "#a5adce" ];
+        optionsTextColor = [ "#8caaee" ];
+        selectedLineBgColor = [ "#414559" ];
+        cherryPickedCommitBgColor = [ "#51576d" ];
+        cherryPickedCommitFgColor = [ "#babbf1" ];
+        unstagedChangesColor = [ "#c6d0f5" ];
+        defaultFgColor = [ "#c6d0f5" ];
+        searchingActiveBorderColor = [ "#e5c890" ];
+      };
+    };
+  };
+
   # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.tmux.enable
   tmux = {
     enable = true;
