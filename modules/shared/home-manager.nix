@@ -1,4 +1,12 @@
 { pkgs, ... }:
+
+let
+  w0 = {
+    name = "Opa Kholis Majid";
+    email = "code@opakholis.space";
+    signingKey = "B029ED5DC8722086";
+  };
+in
 {
 
   # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.bat.enable
@@ -20,6 +28,26 @@
       catppuccin-frappe.src = "${cp}/Catppuccin-frappe.tmTheme";
       catppuccin-macchiato.src = "${cp}/Catppuccin-macchiato.tmTheme";
       catppuccin-mocha.src = "${cp}/Catppuccin-mocha.tmTheme";
+    };
+  };
+
+  # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.git.enable
+  git = {
+    enable = true;
+    lfs.enable = true;
+    userName = w0.name;
+    userEmail = w0.email;
+    signing = {
+      key = w0.signingKey;
+      signByDefault = true;
+    };
+    ignores = [
+      "*~"
+      "*.swp"
+      ".DS_Store"
+    ];
+    extraConfig = {
+      init.defaultBranch = "main";
     };
   };
 
