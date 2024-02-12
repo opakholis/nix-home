@@ -61,14 +61,14 @@
       set -g pane-active-border-style "fg=$cp_surface"
 
       setw -g window-status-current-format "\
-        #[fg=$cp_base,bg=$cp_mauve] #{b:pane_current_path} •\
-        #[fg=$cp_base,bg=$cp_mauve] #W \
-        #[fg=$cp_mauve,bg=$cp_base] \
+      #[fg=$cp_base,bg=$cp_mauve] #{b:pane_current_path} •\
+      #[fg=$cp_base,bg=$cp_mauve] #W \
+      #[fg=$cp_mauve,bg=$cp_base] \
       "
       setw -g window-status-format "\
-        #[fg=$cp_base,bg=$cp_overlay] #I \
-        #[fg=$cp_text,bg=$cp_surface] #W \
-        #[bg=$cp_base] \
+      #[fg=$cp_base,bg=$cp_overlay] #I \
+      #[fg=$cp_text,bg=$cp_surface] #W \
+      #[bg=$cp_base] \
       "
 
       setw -g clock-mode-colour "$cp_mauve"
@@ -110,5 +110,4 @@
       bind e choose-tree -swZ
     '';
   };
-
 }
