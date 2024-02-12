@@ -1,7 +1,7 @@
 { pkgs, ...}:
 
-# The set of packages to appear in the user environment
-# https://nix-community.github.io/home-manager/options.html#opt-home.packages
+# Shared packages for all users
+# https://nix-community.github.io/home-manager/options.xhtml#opt-home.packages
 with pkgs; [
   # common development
   bat
@@ -9,6 +9,9 @@ with pkgs; [
   lazygit
   scrcpy
   tmux
+
+  # lsp related
+  alejandra
 
   # encryption and security
   bitwarden-cli
