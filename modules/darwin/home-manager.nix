@@ -21,6 +21,7 @@ in {
     casks = [
       "iina"
       "keka"
+      "reactotron"
       "zoom"
     ];
 
