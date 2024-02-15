@@ -3,11 +3,7 @@
 # https://nix-community.github.io/home-manager/options.xhtml#opt-home.packages
 with pkgs; [
   # common development
-  bat
-  fzf
-  lazygit
   scrcpy
-  tmux
 
   # lsp related
   alejandra
@@ -19,5 +15,4 @@ with pkgs; [
   jq
   ripgrep
   wget
-  zoxide
 ]

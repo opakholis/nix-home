@@ -27,6 +27,12 @@ in {
     };
   };
 
+  # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.direnv.enable
+  direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
+
   # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.git.enable
   git = {
     enable = true;
@@ -87,8 +93,6 @@ in {
 
     extraConfig = ''
       # TODO: use nix-colors
-      # https://github.com/Misterio77/nix-colors
-      #
       # Catppucin colorscheme
       cp_base="#303446"
       cp_surface="#414559"
@@ -152,5 +156,137 @@ in {
       # Choose-Tree
       bind e choose-tree -swZ
     '';
+  };
+
+  # TODO: use nix-colors
+  # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.fzf.enable
+  fzf = {
+    enable = true;
+    defaultOptions = [
+      "--border"
+      "--color=border:#c6d0f5"
+      "--color=bg+:#414559,bg:#303446"
+      "--color=fg:#c6d0f5,fg+:#c6d0f5"
+      "--color=hl:#e78284,hl+:#e78284"
+      "--color=header:#e78284,pointer:#f2d5cf,spinner:#f2d5cf"
+      "--color=marker:#f2d5cf,prompt:#ca9ee6,info:#ca9ee6"
+    ];
+  };
+
+  # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.zsh.enable
+  zsh = {
+    enable = true;
+    enableAutosuggestions = true;
+    syntaxHighlighting.enable = true;
+    history = {
+      expireDuplicatesFirst = true;
+      extended = true;
+      ignoreAllDups = true;
+      ignoreDups = true;
+      ignoreSpace = true;
+    };
+    initExtra = ''
+      # Do menu-driven completion
+      zstyle ':completion:*' menu select
+
+      # Manual
+      export MANPAGER="lvim +Man!"
+      export MANWIDTH=999
+
+      # More tweaks
+      # see: man zshoptions
+      setopt auto_cd interactive_comments
+
+      # Unhanlded aliases
+      pkgs_exists() {
+        command -v $1 > /dev/null 2>&1
+      }
+
+      # z is zexoide
+      if pkgs_exists zoxide; then
+        alias cd="z"
+      fi
+
+      # better ls
+      if pkgs_exists eza; then
+        alias ls="eza"
+      fi
+
+      # better cat
+      if pkgs_exists bat; then
+        alias cat="bat"
+      fi
+
+      # lunarvim
+      if pkgs_exists lvim; then
+        alias v="lvim"
+        alias vi="lvim"
+      fi
+
+      # lazygit
+      if pkgs_exists lazygit; then
+        alias gg="lazygit"
+      fi
+    '';
+    initExtraBeforeCompInit = ''
+      # Typewritten theme
+      TYPEWRITTEN_SYMBOL="▲"
+      TYPEWRITTEN_DISABLE_RETURN_CODE=true
+    '';
+    plugins = [
+      {
+        name = "typewritten";
+        src = builtins.fetchGit {
+          url = "https://github.com/reobin/typewritten";
+          rev = "6f78ec20f1a3a5b996716d904ed8c7daf9b76a2a";
+        };
+      }
+      {
+        name = "zsh-autopair";
+        src = builtins.fetchGit {
+          url = "https://github.com/hlissner/zsh-autopair";
+          rev = "396c38a7468458ba29011f2ad4112e4fd35f78e6";
+        };
+      }
+      {
+        name = "zsh-vi-mode";
+        file = "zsh-vi-mode.plugin.zsh";
+        src = builtins.fetchGit {
+          url = "https://github.com/jeffreytse/zsh-vi-mode";
+          rev = "ea1f58ab9b1f3eac50e2cde3e3bc612049ef683b";
+        };
+      }
+    ];
+    shellAliases = {
+      # Enable aliases to be sudo’ed
+      sudo = "sudo ";
+
+      # Common
+      c = "clear";
+      q = "exit";
+
+      # rabbit navigation
+      ".." = "cd ..";
+      "..." = "cd ../..";
+      "...." = "cd ../../..";
+
+      # git
+      g = "git";
+      ga = "git add";
+      gc = "git commit";
+      gl = "git pull";
+      gp = "git push";
+      glo = "git pull origin";
+      gpo = "git push origin";
+      gst = "git status";
+      gco = "git checkout";
+      gcb = "git checkout -b";
+      gcl = "git clone";
+    };
+  };
+
+  # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.zoxide.enable
+  zoxide = {
+    enable = true;
   };
 }
