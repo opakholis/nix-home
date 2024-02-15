@@ -40,6 +40,12 @@ in {
       home = {
         packages = pkgs.callPackage ./packages.nix {};
 
+        # Extra $PATH which isn't managed by Home Manager.
+        # https://nix-community.github.io/home-manager/options.xhtml#opt-home.sessionPath
+        sessionPath = [
+          "$HOME/.local/bin"
+        ];
+
         # Should not change this value, even if you update Home Manager.
         # If you do want to update the value, then make sure to first
         # check the Home Manager release notes.
