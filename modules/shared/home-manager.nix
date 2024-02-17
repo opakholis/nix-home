@@ -173,6 +173,16 @@ in {
     ];
   };
 
+  # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.neovim.enable
+  neovim = {
+    enable = true;
+    package = pkgs.neovim-nightly;
+    defaultEditor = true;
+    withNodeJs = true;
+    withPython3 = false;
+    withRuby = false;
+  };
+
   # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.zsh.enable
   zsh = {
     enable = true;

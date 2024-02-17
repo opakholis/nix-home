@@ -1,6 +1,7 @@
 {...}: {
   imports = [
     ../../modules/darwin/home-manager.nix
+    ../../modules/shared
   ];
 
   # Make sure the nix daemon always runs,
