@@ -196,6 +196,8 @@ in {
       ignoreSpace = true;
     };
     initExtra = ''
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+
       # Do menu-driven completion
       zstyle ':completion:*' menu select
 
