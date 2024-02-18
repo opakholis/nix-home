@@ -205,6 +205,13 @@ in {
       export MANPAGER="lvim +Man!"
       export MANWIDTH=999
 
+      # Bind up and down arrow keys to search history
+      autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+      zle -N up-line-or-beginning-search
+      zle -N down-line-or-beginning-search
+      bindkey "^[[A" up-line-or-beginning-search
+      bindkey "^[[B" down-line-or-beginning-search
+
       # More tweaks
       # see: man zshoptions
       setopt auto_cd interactive_comments
