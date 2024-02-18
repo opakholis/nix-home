@@ -209,36 +209,23 @@ in {
       # see: man zshoptions
       setopt auto_cd interactive_comments
 
-      # Unhanlded aliases
-      pkgs_exists() {
-        command -v $1 > /dev/null 2>&1
+      # Create aliases for packages if they exist
+      create_alias() {
+        local pkg_name=$1
+        local alias_name=$2
+
+        if command -v "$pkg_name" > /dev/null 2>&1; then
+          alias "$alias_name"="$pkg_name"
+        fi
       }
 
-      # z is zexoide
-      if pkgs_exists zoxide; then
-        alias cd="z"
-      fi
-
-      # better ls
-      if pkgs_exists eza; then
-        alias ls="eza"
-      fi
-
-      # better cat
-      if pkgs_exists bat; then
-        alias cat="bat"
-      fi
-
-      # lunarvim
-      if pkgs_exists lvim; then
-        alias v="lvim"
-        alias vi="lvim"
-      fi
-
-      # lazygit
-      if pkgs_exists lazygit; then
-        alias gg="lazygit"
-      fi
+      # <pkg_name> <alias_name>
+      create_alias zoxide cd
+      create_alias eza ls
+      create_alias bat cat
+      create_alias lvim v
+      create_alias lvim vi
+      create_alias lazygit gg
     '';
     initExtraBeforeCompInit = ''
       # Typewritten theme
