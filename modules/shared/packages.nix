@@ -8,6 +8,9 @@ with pkgs; [
   # lsp related
   alejandra
 
+  # network
+  dnscrypt-proxy2
+
   # terminal utilities
   curl
   coreutils
