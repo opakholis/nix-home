@@ -186,7 +186,7 @@ in {
   # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.zsh.enable
   zsh = {
     enable = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     history = {
       expireDuplicatesFirst = true;
