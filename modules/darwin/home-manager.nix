@@ -19,10 +19,31 @@ in {
     # List of Homebrew casks to install.
     # https://daiderd.com/nix-darwin/manual/index.html#opt-homebrew.casks
     casks = [
-      "iina"
-      "keka"
+      # browers
+      "arc"
+      "firefox"
+
+      # development
+      "iterm2"
+      "orbstack"
+      "openvpn-connect"
       "reactotron"
+      "visual-studio-code"
+      "zulu11"
+
+      # communication
       "zoom"
+
+      # productivity
+      "calibre"
+      "obsidian"
+      "raycast"
+
+      # utilities
+      "cleanshot"
+      "iina"
+      "lunar"
+      "keka"
     ];
 
     # Apps to install from the Mac App Store.
