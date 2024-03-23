@@ -4,12 +4,20 @@
 with pkgs; [
   # common development
   scrcpy
+  watchman
+
+  # node.js development
+  nodejs_18
+  nodePackages.yarn
 
   # lsp related
   alejandra
 
   # network
   dnscrypt-proxy2
+
+  # encryption and security
+  bitwarden-cli
 
   # terminal utilities
   curl

@@ -6,6 +6,5 @@ with pkgs; let
 in
   shared-packages
   ++ [
-    # encryption and security
-    bitwarden-cli
+    darwin.ios-deploy
   ]
