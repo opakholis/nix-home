@@ -48,8 +48,10 @@ in {
 
     # Apps to install from the Mac App Store.
     # https://daiderd.com/nix-darwin/manual/index.html#opt-homebrew.masApps
+    # See product identifier: `mas list`
     masApps = {
       Xcode = 497799835;
+      TestFlight = 899247664;
     };
   };
 
