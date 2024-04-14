@@ -18,13 +18,27 @@
   };
 
   outputs = {
+    nixpkgs,
     darwin,
     home-manager,
     ...
-  } @ inputs: {
+  } @ inputs: let
+    supportedSystems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin"];
+    forEachSupportedSystem = f:
+      nixpkgs.lib.genAttrs supportedSystems (
+        system:
+          f {
+            pkgs = import inputs.nixpkgs {
+              inherit system;
+            };
+          }
+      );
+  in {
     darwinConfigurations."osx" = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
-      specialArgs = {inherit inputs;};
+      specialArgs = {
+        inherit inputs;
+      };
       modules = [
         # The flake-based setup of the Home Manager nix-darwin module
         home-manager.darwinModules.home-manager
@@ -33,5 +47,13 @@
         ./hosts/osx
       ];
     };
+
+    # Shell environments
+    devShells = forEachSupportedSystem (
+      {pkgs}:
+        import ./dev-shells.nix {
+          inherit pkgs;
+        }
+    );
   };
 }
