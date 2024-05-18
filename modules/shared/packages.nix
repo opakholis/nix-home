@@ -13,9 +13,6 @@ with pkgs; [
   # lsp related
   alejandra
 
-  # network
-  dnscrypt-proxy2
-
   # encryption and security
   bitwarden-cli
 
