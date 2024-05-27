@@ -23,6 +23,7 @@
     home-manager,
     ...
   } @ inputs: let
+    user = "opakholis";
     supportedSystems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin"];
     forEachSupportedSystem = f:
       nixpkgs.lib.genAttrs supportedSystems (
@@ -34,6 +35,23 @@
           }
       );
   in {
+    nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = {
+        inherit inputs;
+      };
+      modules = [
+        home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            users.${user} = import ./modules/nixos/home-manager.nix;
+          };
+        }
+        ./hosts/nixos
+      ];
+    };
+
     darwinConfigurations."osx" = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       specialArgs = {
