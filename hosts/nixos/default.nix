@@ -4,6 +4,7 @@ in {
   imports = [
     ../../modules/nixos/fonts.nix
     ../../modules/nixos/hardware.nix
+    ../../modules/nixos/security.nix
   ];
 
   # Bootloader.
