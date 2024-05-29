@@ -45,7 +45,7 @@
         {
           home-manager = {
             useGlobalPkgs = true;
-            users.${user} = import ./modules/nixos/home-manager.nix;
+            users.${user} = import ./modules/nixos/home-manager;
           };
         }
         ./hosts/nixos
