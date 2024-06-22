@@ -42,8 +42,8 @@ in {
       # utilities
       "cleanshot"
       "iina"
-      "lunar"
       "keka"
+      "monitorcontrol"
     ];
 
     # Apps to install from the Mac App Store.
