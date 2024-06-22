@@ -21,7 +21,6 @@ in {
     casks = [
       # browers
       "arc"
-      "firefox"
 
       # development
       "iterm2"
