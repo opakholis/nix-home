@@ -7,4 +7,5 @@ in
   shared-packages
   ++ [
     darwin.ios-deploy
+    zulu11
   ]

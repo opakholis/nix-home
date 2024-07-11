@@ -34,7 +34,6 @@ in {
       "openvpn-connect"
       "reactotron"
       "visual-studio-code"
-      "zulu11"
 
       # communication
       "zoom"
