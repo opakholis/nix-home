@@ -18,7 +18,6 @@ with pkgs; [
 
   # terminal utilities
   curl
-  coreutils
   eza
   jq
   ripgrep
