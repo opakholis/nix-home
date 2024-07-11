@@ -176,7 +176,7 @@ in {
   # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.neovim.enable
   neovim = {
     enable = true;
-    package = pkgs.neovim-nightly;
+    package = pkgs.neovim;
     defaultEditor = true;
     withNodeJs = true;
     withPython3 = false;
