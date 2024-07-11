@@ -16,6 +16,12 @@ in {
     # https://brew.sh/
     enable = true;
 
+    # List of Homebrew formulae to install.
+    # https://daiderd.com/nix-darwin/manual/index.html#opt-homebrew.brews
+    brews = [
+      "bitwarden-cli"
+    ];
+
     # List of Homebrew casks to install.
     # https://daiderd.com/nix-darwin/manual/index.html#opt-homebrew.casks
     casks = [

@@ -14,7 +14,7 @@ with pkgs; [
   alejandra
 
   # encryption and security
-  bitwarden-cli
+  # bitwarden-cli
 
   # terminal utilities
   curl
