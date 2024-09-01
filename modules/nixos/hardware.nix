@@ -46,7 +46,7 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   hardware = {
-    opengl.enable = true;
+    graphics.enable = true;
     cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   };
 }
