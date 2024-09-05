@@ -8,26 +8,23 @@ in {
     ../../modules/shared/virt
   ];
 
-  # Bootloader.
+  # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Enable networking
+  # Network
   networking.networkmanager.enable = true;
   networking.hostName = "nixos";
 
-  # Set your time zone.
+  # Timezone
   time.timeZone = "Asia/Jakarta";
 
   # Manages a such.
   programs = {
     zsh.enable = true;
-
-    # Backlight
     light.enable = true;
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users."${user}" = {
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel" "video"];
@@ -40,13 +37,14 @@ in {
 
   # Enable to make sway happy
   security.rtkit.enable = true;
-
   services.dbus.packages = [pkgs.gcr];
 
-  # Start sway automatically
-  environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && sway
-  '';
+  environment = {
+    # Start sway automatically
+    loginShellInit = ''
+      [[ "$(tty)" == /dev/tty1 ]] && sway
+    '';
+  };
 
   system.stateVersion = "23.11"; # Don't change this!
 }
