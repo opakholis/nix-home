@@ -1,10 +1,10 @@
-{inputs, ...}: let
+{ inputs, ... }:
+let
   inherit (inputs) neovim-nightly-overlay;
-in {
+in
+{
   nixpkgs = {
     # https://github.com/nix-community/neovim-nightly-overlay?tab=readme-ov-file#to-use-the-overlay
-    overlays = [
-      neovim-nightly-overlay.overlays.default
-    ];
+    overlays = [ neovim-nightly-overlay.overlays.default ];
   };
 }

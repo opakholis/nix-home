@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   # https://nix-community.github.io/home-manager/options.xhtml#opt-wayland.windowManager.sway.enable
   wayland.windowManager.sway = {
     enable = true;
@@ -6,7 +7,7 @@
       modifier = "Mod4";
       terminal = "alacritty";
 
-      bars = [];
+      bars = [ ];
 
       colors = {
         background = "#1e1e2e";

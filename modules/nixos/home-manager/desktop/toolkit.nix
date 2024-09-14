@@ -1,11 +1,12 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   # https://nix-community.github.io/home-manager/options.xhtml#opt-gtk.enable
   gtk = {
     enable = true;
     theme = {
       name = "Catppuccin-Frappe-Compact-Lavender-Dark";
       package = pkgs.catppuccin-gtk.override {
-        accents = ["lavender"];
+        accents = [ "lavender" ];
         size = "compact";
         variant = "frappe";
       };

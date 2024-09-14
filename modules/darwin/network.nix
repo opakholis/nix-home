@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   # https://daiderd.com/nix-darwin/manual/index.html#opt-networking.knownNetworkServices
   networking = {
     knownNetworkServices = [

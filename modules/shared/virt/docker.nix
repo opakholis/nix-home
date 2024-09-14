@@ -1,14 +1,16 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   user = "opakholis";
-in {
+in
+{
   virtualisation.docker = {
     enable = true;
     autoPrune = {
       enable = true;
-      flags = ["--all"];
+      flags = [ "--all" ];
       dates = "weekly";
     };
   };
 
-  users.users.${user}.extraGroups = ["docker"];
+  users.users.${user}.extraGroups = [ "docker" ];
 }

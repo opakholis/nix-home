@@ -1,20 +1,21 @@
-{pkgs}:
+{ pkgs }:
 # The set of packages to appear in the user environment
 # https://nix-community.github.io/home-manager/options.xhtml#opt-home.packages
-with pkgs; let
-  shared-packages = import ../shared/packages.nix {inherit pkgs;};
+with pkgs;
+let
+  shared-packages = import ../shared/packages.nix { inherit pkgs; };
 in
-  shared-packages
-  ++ [
-    # common development
-    scrcpy
-    watchman
+shared-packages
+++ [
+  # common development
+  scrcpy
+  watchman
 
-    # node.js development
-    nodejs_18
-    (yarn.override {nodejs = nodejs_18;})
+  # node.js development
+  nodejs_18
+  (yarn.override { nodejs = nodejs_18; })
 
-    # react-native development
-    darwin.ios-deploy
-    zulu11
-  ]
+  # react-native development
+  darwin.ios-deploy
+  zulu11
+]

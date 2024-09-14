@@ -1,6 +1,8 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   user = "opakholis";
-in {
+in
+{
   imports = [
     ../../modules/nixos/fonts.nix
     ../../modules/nixos/hardware.nix
@@ -27,17 +29,24 @@ in {
 
   users.users."${user}" = {
     isNormalUser = true;
-    extraGroups = ["networkmanager" "wheel" "video"];
-    packages = with pkgs; [];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "video"
+    ];
+    packages = with pkgs; [ ];
     shell = pkgs.zsh;
   };
 
   # Enable flakes
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Enable to make sway happy
   security.rtkit.enable = true;
-  services.dbus.packages = [pkgs.gcr];
+  services.dbus.packages = [ pkgs.gcr ];
 
   environment = {
     # Start sway automatically

@@ -1,10 +1,12 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   w0 = {
     name = "Opa Kholis Majid";
     email = "code@opakholis.space";
     signingKey = "B029ED5DC8722086";
   };
-in {
+in
+{
   # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.bat.enable
   bat = {
     enable = true;
@@ -12,19 +14,21 @@ in {
       pager = "less -FR";
       theme = "catppuccin-frappe";
     };
-    themes = let
-      cp = pkgs.fetchFromGitHub {
-        owner = "catppuccin";
-        repo = "bat";
-        rev = "ba4d16880d63e656acced2b7d4e034e4a93f74b1";
-        sha256 = "1g2r6j33f4zys853i1c5gnwcdbwb6xv5w6pazfdslxf69904lrg9";
+    themes =
+      let
+        cp = pkgs.fetchFromGitHub {
+          owner = "catppuccin";
+          repo = "bat";
+          rev = "ba4d16880d63e656acced2b7d4e034e4a93f74b1";
+          sha256 = "1g2r6j33f4zys853i1c5gnwcdbwb6xv5w6pazfdslxf69904lrg9";
+        };
+      in
+      {
+        catppuccin-latte.src = "${cp}/Catppuccin-latte.tmTheme";
+        catppuccin-frappe.src = "${cp}/Catppuccin-frappe.tmTheme";
+        catppuccin-macchiato.src = "${cp}/Catppuccin-macchiato.tmTheme";
+        catppuccin-mocha.src = "${cp}/Catppuccin-mocha.tmTheme";
       };
-    in {
-      catppuccin-latte.src = "${cp}/Catppuccin-latte.tmTheme";
-      catppuccin-frappe.src = "${cp}/Catppuccin-frappe.tmTheme";
-      catppuccin-macchiato.src = "${cp}/Catppuccin-macchiato.tmTheme";
-      catppuccin-mocha.src = "${cp}/Catppuccin-mocha.tmTheme";
-    };
   };
 
   # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.direnv.enable
@@ -59,15 +63,18 @@ in {
     enable = true;
     settings = {
       gui.theme = {
-        activeBorderColor = ["#babbf1" "bold"];
-        inactiveBorderColor = ["#a5adce"];
-        optionsTextColor = ["#8caaee"];
-        selectedLineBgColor = ["#414559"];
-        cherryPickedCommitBgColor = ["#51576d"];
-        cherryPickedCommitFgColor = ["#babbf1"];
-        unstagedChangesColor = ["#c6d0f5"];
-        defaultFgColor = ["#c6d0f5"];
-        searchingActiveBorderColor = ["#e5c890"];
+        activeBorderColor = [
+          "#babbf1"
+          "bold"
+        ];
+        inactiveBorderColor = [ "#a5adce" ];
+        optionsTextColor = [ "#8caaee" ];
+        selectedLineBgColor = [ "#414559" ];
+        cherryPickedCommitBgColor = [ "#51576d" ];
+        cherryPickedCommitFgColor = [ "#babbf1" ];
+        unstagedChangesColor = [ "#c6d0f5" ];
+        defaultFgColor = [ "#c6d0f5" ];
+        searchingActiveBorderColor = [ "#e5c890" ];
       };
     };
   };

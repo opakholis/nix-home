@@ -18,61 +18,63 @@
     neovim-nightly-overlay.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = {
-    nixpkgs,
-    darwin,
-    home-manager,
-    ...
-  } @ inputs: let
-    user = "opakholis";
-    supportedSystems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin"];
-    forEachSupportedSystem = f:
-      nixpkgs.lib.genAttrs supportedSystems (
-        system:
-          f {
-            pkgs = import inputs.nixpkgs {
-              inherit system;
+  outputs =
+    {
+      nixpkgs,
+      darwin,
+      home-manager,
+      ...
+    }@inputs:
+    let
+      user = "opakholis";
+      supportedSystems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "aarch64-darwin"
+      ];
+      forEachSupportedSystem =
+        f:
+        nixpkgs.lib.genAttrs supportedSystems (
+          system: f { pkgs = import inputs.nixpkgs { inherit system; }; }
+        );
+    in
+    {
+      nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {
+          inherit inputs;
+        };
+        modules = [
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              users.${user} = import ./modules/nixos/home-manager;
             };
           }
-      );
-  in {
-    nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = {
-        inherit inputs;
+          ./hosts/nixos
+        ];
       };
-      modules = [
-        home-manager.nixosModules.home-manager
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            users.${user} = import ./modules/nixos/home-manager;
-          };
-        }
-        ./hosts/nixos
-      ];
-    };
 
-    darwinConfigurations."osx" = darwin.lib.darwinSystem {
-      system = "aarch64-darwin";
-      specialArgs = {
-        inherit inputs;
+      darwinConfigurations."osx" = darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        specialArgs = {
+          inherit inputs;
+        };
+        modules = [
+          # The flake-based setup of the Home Manager nix-darwin module
+          home-manager.darwinModules.home-manager
+
+          # Darwin configuration options
+          ./hosts/osx
+        ];
       };
-      modules = [
-        # The flake-based setup of the Home Manager nix-darwin module
-        home-manager.darwinModules.home-manager
 
-        # Darwin configuration options
-        ./hosts/osx
-      ];
+      # Shell environments
+      devShells = forEachSupportedSystem ({ pkgs }: import ./dev-shells.nix { inherit pkgs; });
+
+      # `nix fmt` - Reformat your code in the standard style
+      # https://nix.dev/manual/nix/2.24/command-ref/new-cli/nix3-fmt
+      formatter.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.nixfmt-rfc-style;
     };
-
-    # Shell environments
-    devShells = forEachSupportedSystem (
-      {pkgs}:
-        import ./dev-shells.nix {
-          inherit pkgs;
-        }
-    );
-  };
 }
