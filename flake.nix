@@ -27,17 +27,17 @@
     }@inputs:
     let
       user = "opakholis";
-      supportedSystems = [
+      systems = [
         "x86_64-linux"
-        "aarch64-linux"
         "aarch64-darwin"
       ];
-      forEachSupportedSystem =
-        f:
-        nixpkgs.lib.genAttrs supportedSystems (
-          system: f {
-          inherit system;
-          pkgs = nixpkgs.legacyPackages.${system};
+      forEachSystem =
+        func:
+        nixpkgs.lib.genAttrs systems (
+          system:
+          func {
+            inherit system;
+            pkgs = nixpkgs.legacyPackages.${system};
           }
         );
     in
@@ -74,10 +74,11 @@
       };
 
       # Shell environments
-      devShells = forEachSupportedSystem ({ pkgs, ... }: import ./dev-shells.nix { inherit pkgs; });
+      # Used by `nix develop .#<name>`
+      devShells = forEachSystem ({ pkgs, ... }: import ./dev-shells.nix { inherit pkgs; });
 
-      # `nix fmt` - Reformat your code in the standard style
-      # https://nix.dev/manual/nix/2.24/command-ref/new-cli/nix3-fmt
-      formatter = forEachSupportedSystem ({pkgs, ...}: pkgs.nixfmt-rfc-style);
+      # Formatter
+      # Used by`nix fmt`
+      formatter = forEachSystem ({ pkgs, ... }: pkgs.nixfmt-rfc-style);
     };
 }
