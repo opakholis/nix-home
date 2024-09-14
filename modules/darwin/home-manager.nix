@@ -27,6 +27,7 @@ in {
     casks = [
       # browers
       "arc"
+      "zen-browser"
 
       # development
       "iterm2"
