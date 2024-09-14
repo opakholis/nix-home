@@ -5,6 +5,7 @@ in
   shared-packages
   ++ [
     dig
+    htop
     pfetch-rs
 
     # wayland stuff
@@ -13,6 +14,4 @@ in
     slurp
     swaybg
     wl-clipboard
-
-    vimb
   ]

@@ -6,6 +6,15 @@ with pkgs; let
 in
   shared-packages
   ++ [
+    # common development
+    scrcpy
+    watchman
+
+    # node.js development
+    nodejs_18
+    (yarn.override {nodejs = nodejs_18;})
+
+    # react-native development
     darwin.ios-deploy
     zulu11
   ]
