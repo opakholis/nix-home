@@ -35,7 +35,10 @@
       forEachSupportedSystem =
         f:
         nixpkgs.lib.genAttrs supportedSystems (
-          system: f { pkgs = import inputs.nixpkgs { inherit system; }; }
+          system: f {
+          inherit system;
+          pkgs = nixpkgs.legacyPackages.${system};
+          }
         );
     in
     {
@@ -71,10 +74,10 @@
       };
 
       # Shell environments
-      devShells = forEachSupportedSystem ({ pkgs }: import ./dev-shells.nix { inherit pkgs; });
+      devShells = forEachSupportedSystem ({ pkgs, ... }: import ./dev-shells.nix { inherit pkgs; });
 
       # `nix fmt` - Reformat your code in the standard style
       # https://nix.dev/manual/nix/2.24/command-ref/new-cli/nix3-fmt
-      formatter.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.nixfmt-rfc-style;
+      formatter = forEachSupportedSystem ({pkgs, ...}: pkgs.nixfmt-rfc-style);
     };
 }
