@@ -75,7 +75,7 @@
 
       # Shell environments
       # Used by `nix develop .#<name>`
-      devShells = forEachSystem ({ pkgs, ... }: import ./dev-shells.nix { inherit pkgs; });
+      devShells = forEachSystem ({ pkgs, ... }: import ./shell.nix { inherit pkgs; });
 
       # Formatter
       # Used by`nix fmt`
