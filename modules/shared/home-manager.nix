@@ -12,6 +12,7 @@ in
     enable = true;
     config = {
       pager = "less -FR";
+      style = "snip";
       theme = "catppuccin-frappe";
     };
     themes =
