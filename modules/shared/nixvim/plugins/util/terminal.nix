@@ -1,0 +1,37 @@
+{ ... }:
+{
+  programs.nixvim = {
+    plugins.toggleterm = {
+      enable = true;
+      settings = {
+        shade_terminals = false;
+      };
+    };
+    plugins.lazygit = {
+      enable = true;
+    };
+
+    keymaps = [
+      {
+        key = "<leader>gg";
+        action = "<cmd>LazyGit<cr>";
+        options.desc = "Lazygit";
+      }
+      {
+        key = "<leader>tt";
+        action = "<cmd>ToggleTerm direction=float<cr>";
+        options.desc = "Terminal to float";
+      }
+      {
+        key = "<leader>tb";
+        action = "<cmd>ToggleTerm direction=horizontal size=10<cr>";
+        options.desc = "Terminal to below";
+      }
+      {
+        key = "<leader>tr";
+        action = "<cmd>ToggleTerm direction=vertical size=50<cr>";
+        options.desc = "Terminal to right";
+      }
+    ];
+  };
+}
