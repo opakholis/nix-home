@@ -7,6 +7,7 @@ in
     ../../modules/nixos/fonts.nix
     ../../modules/nixos/hardware.nix
     ../../modules/nixos/security.nix
+    ../../modules/shared/nixvim
     ../../modules/shared/virt
   ];
 

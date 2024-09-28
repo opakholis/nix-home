@@ -181,16 +181,6 @@ in
     ];
   };
 
-  # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.neovim.enable
-  neovim = {
-    enable = true;
-    package = pkgs.neovim;
-    defaultEditor = true;
-    withNodeJs = true;
-    withPython3 = false;
-    withRuby = false;
-  };
-
   # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.zsh.enable
   zsh = {
     enable = true;
@@ -213,9 +203,9 @@ in
       # Do menu-driven completion
       zstyle ':completion:*' menu select
 
-      # Manual
-      export MANPAGER="lvim +Man!"
-      export MANWIDTH=999
+      # # Manual
+      # export MANPAGER="lvim +Man!"
+      # export MANWIDTH=999
 
       # Bind up and down arrow keys to search history
       autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
@@ -242,8 +232,8 @@ in
       create_alias zoxide cd
       create_alias eza ls
       create_alias bat cat
-      create_alias lvim v
-      create_alias lvim vi
+      # create_alias lvim v
+      # create_alias lvim vi
       create_alias lazygit gg
     '';
     initExtraBeforeCompInit = ''

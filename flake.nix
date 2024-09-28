@@ -16,11 +16,15 @@
     ## Neovim
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     neovim-nightly-overlay.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixvim.url = "github:nix-community/nixvim";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
     {
       nixpkgs,
+      nixvim,
       darwin,
       home-manager,
       ...
@@ -48,6 +52,7 @@
           inherit inputs;
         };
         modules = [
+          nixvim.nixosModules.nixvim
           home-manager.nixosModules.home-manager
           {
             home-manager = {
