@@ -203,9 +203,13 @@ in
       ignoreDups = true;
       ignoreSpace = true;
     };
+    initExtraFirst = ''
+      # Fix brew path
+      if [ -f /opt/homebrew/bin/brew ]; then
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+      fi
+    '';
     initExtra = ''
-      eval "$(/opt/homebrew/bin/brew shellenv)"
-
       # Do menu-driven completion
       zstyle ':completion:*' menu select
 
