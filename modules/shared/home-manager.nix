@@ -203,10 +203,6 @@ in
       # Do menu-driven completion
       zstyle ':completion:*' menu select
 
-      # # Manual
-      # export MANPAGER="lvim +Man!"
-      # export MANWIDTH=999
-
       # Bind up and down arrow keys to search history
       autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
       zle -N up-line-or-beginning-search
@@ -232,8 +228,6 @@ in
       create_alias zoxide cd
       create_alias eza ls
       create_alias bat cat
-      # create_alias lvim v
-      # create_alias lvim vi
       create_alias lazygit gg
     '';
     initExtraBeforeCompInit = ''

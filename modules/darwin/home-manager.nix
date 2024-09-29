@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 let
   user = "opakholis";
 in
@@ -31,6 +31,11 @@ in
         };
 
         programs = { } // import ../shared/home-manager.nix { inherit pkgs; };
+
+        imports = [
+          inputs.nixvim.homeManagerModules.nixvim
+          ../shared/nixvim
+        ];
       };
   };
 }
