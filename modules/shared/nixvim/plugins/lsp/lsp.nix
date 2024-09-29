@@ -19,6 +19,9 @@
         cssls = {
           enable = true;
         };
+        eslint = {
+          enable = true;
+        };
         html = {
           enable = true;
         };
@@ -65,6 +68,10 @@
           "<leader>lr" = {
             action = "rename";
             desc = "Rename";
+          };
+          "<leader>lf" = {
+            action = "format";
+            desc = "Format";
           };
           "<leader>la" = {
             action = "code_action";
