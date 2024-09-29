@@ -10,6 +10,7 @@
         integrations = {
           alpha = true;
           cmp = true;
+          harpoon = true;
           gitsigns = true;
           indent_blankline.enabled = true;
           native_lsp.enabled = true;
