@@ -11,6 +11,12 @@
     # https://daiderd.com/nix-darwin/manual/index.html#opt-homebrew.global.brewfile
     global.brewfile = true;
 
+    # List of Homebrew formula repositories to tap.
+    # https://daiderd.com/nix-darwin/manual/index.html#opt-homebrew.taps
+    taps = [
+      "buo/cask-upgrade"
+    ];
+
     # List of Homebrew formulae to install.
     # https://daiderd.com/nix-darwin/manual/index.html#opt-homebrew.brews
     brews = [ "bitwarden-cli" ];
