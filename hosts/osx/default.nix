@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ../../modules/darwin/brew.nix
     ../../modules/darwin/home-manager.nix
     ../../modules/darwin/network.nix
     ../../modules/shared
