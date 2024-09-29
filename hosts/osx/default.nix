@@ -4,7 +4,6 @@
     ../../modules/darwin/brew.nix
     ../../modules/darwin/home-manager.nix
     ../../modules/darwin/network.nix
-    ../../modules/shared
   ];
 
   # Make sure the nix daemon always runs,
