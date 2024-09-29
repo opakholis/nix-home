@@ -25,10 +25,9 @@ in
           # https://nix-community.github.io/home-manager/options.xhtml#opt-home.sessionPath
           sessionPath = [ "$HOME/.local/bin" ];
 
-          # Should not change this value, even if you update Home Manager.
-          # If you do want to update the value, then make sure to first
-          # check the Home Manager release notes.
-          stateVersion = "23.05";
+          # Should check the release notes before changing this value.
+          # https://nix-community.github.io/home-manager/options.html#opt-home.stateVersion
+          stateVersion = "24.11";
         };
 
         programs = { } // import ../shared/home-manager.nix { inherit pkgs; };
