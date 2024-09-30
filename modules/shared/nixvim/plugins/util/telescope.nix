@@ -24,6 +24,10 @@
           action = "live_grep";
           options.desc = "Find text";
         };
+        "<leader>sl" = {
+          action = "resume";
+          options.desc = "Last search";
+        };
 
         # Meh
         "<leader>sk" = {
