@@ -3,7 +3,17 @@
   programs.nixvim = {
     diagnostics = {
       virtual_text = false;
+      float = {
+        focusable = true;
+        style = "minimal";
+        border = "rounded";
+        source = "always";
+        header = "";
+        prefix = "";
+        suffix = "";
+      };
     };
+
     opts = {
       # Show line numbers
       number = true;
