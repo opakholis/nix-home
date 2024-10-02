@@ -19,9 +19,6 @@
         cssls = {
           enable = true;
         };
-        eslint = {
-          enable = true;
-        };
         html = {
           enable = true;
         };
@@ -41,52 +38,36 @@
       keymaps = {
         silent = true;
         lspBuf = {
-          gd = {
-            action = "definition";
-            desc = "Goto Definition";
-          };
-          gr = {
-            action = "references";
-            desc = "Goto References";
-          };
-          gD = {
-            action = "declaration";
-            desc = "Goto Declaration";
-          };
-          gI = {
-            action = "implementation";
-            desc = "Goto Implementation";
-          };
-          gT = {
-            action = "type_definition";
-            desc = "Type Definition";
-          };
-          K = {
-            action = "hover";
-            desc = "Hover";
-          };
+          K = "hover";
+          gh = "hover";
+          gr = "references";
+          gd = "definition";
+          gi = "implementation";
+          gt = "type_definition";
+          "<tab>" = "signature_help";
           "<leader>lr" = {
             action = "rename";
             desc = "Rename";
-          };
-          "<leader>lf" = {
-            action = "format";
-            desc = "Format";
           };
           "<leader>la" = {
             action = "code_action";
             desc = "Code Action";
           };
         };
+        extra = [
+          {
+            mode = "n";
+            key = "<leader>lf";
+            action = "<cmd>lua require('conform').format()<cr>";
+            options = {
+              desc = "Format";
+            };
+          }
+        ];
         diagnostic = {
-          "[d" = {
-            action = "goto_next";
-            desc = "Next Diagnostic";
-          };
-          "]d" = {
-            action = "goto_prev";
-            desc = "Previous Diagnostic";
-          };
+          "[d" = "goto_next";
+          "]d" = "goto_prev";
+          "gl" = "open_float";
         };
       };
     };
