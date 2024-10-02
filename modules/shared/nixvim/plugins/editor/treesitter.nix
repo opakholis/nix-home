@@ -4,14 +4,11 @@
     plugins.treesitter = {
       enable = true;
       settings = {
-        ensureInstalled = [
+        ensure_installed = [
           "astro"
           "bash"
           "css"
           "diff"
-          "git_config"
-          "git_rebase"
-          "gitattributes"
           "gitcommit"
           "gitignore"
           "html"
@@ -33,7 +30,6 @@
 
         highlight = {
           enable = true;
-
           # Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
           additional_vim_regex_highlighting = true;
         };
