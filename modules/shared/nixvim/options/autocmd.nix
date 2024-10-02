@@ -4,6 +4,8 @@
     autoGroups = {
       highlight_yank = { };
       restore_cursor = { };
+      lazy_close = { };
+
     };
 
     autoCmd = [
@@ -36,6 +38,24 @@
               then
                 vim.cmd "normal! g`\""
               end
+            end
+          '';
+        };
+      }
+
+      # Close certain filetypes with q
+      {
+        group = "lazy_close";
+        event = [ "FileType" ];
+        pattern = [
+          "help"
+          "man"
+        ];
+        callback = {
+          __raw = ''
+            function(event)
+              vim.bo[event.buf].buflisted = false
+              vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
             end
           '';
         };
