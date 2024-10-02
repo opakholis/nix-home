@@ -4,7 +4,7 @@
     which-key = {
       enable = true;
       settings = {
-        delay = 250;
+        delay = 500;
         disable = {
           ft = [
             "TelescopePrompt"
