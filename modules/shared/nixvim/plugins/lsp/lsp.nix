@@ -28,7 +28,7 @@
         lua-ls = {
           enable = true;
         };
-        nixd = {
+        nil-ls = {
           enable = true;
         };
         ts-ls = {
