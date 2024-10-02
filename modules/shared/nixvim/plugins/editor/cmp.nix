@@ -19,6 +19,9 @@
         };
         sources = [
           {
+            name = "copilot";
+          }
+          {
             name = "nvim_lsp";
           }
           {

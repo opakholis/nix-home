@@ -3,13 +3,18 @@
   programs.nixvim = {
     plugins.lspkind = {
       enable = true;
+      symbolMap = {
+        Copilot = "";
+      };
       cmp = {
         enable = true;
+        maxWidth = 70;
         menu = {
           nvim_lsp = "[LSP]";
           path = "[path]";
           luasnip = "[snip]";
           buffer = "[buffer]";
+          copilot = "[AI]";
         };
       };
     };
