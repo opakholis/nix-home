@@ -76,10 +76,14 @@
         foldclose = "▸";
       };
 
+      # Better completion experience
+      # Max items in the completion menu
       completeopt = [
+        "menu"
         "menuone"
-        "noselect"
+        "noinsert"
       ];
+      pumheight = 15;
     };
   };
 }
