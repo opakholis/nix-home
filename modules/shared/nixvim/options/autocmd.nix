@@ -50,6 +50,7 @@
         pattern = [
           "help"
           "man"
+          "qf"
         ];
         callback = {
           __raw = ''
