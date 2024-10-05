@@ -39,7 +39,7 @@
         ];
 
         completion = {
-          keyword_length = 3;
+          keyword_length = 1;
           completeopt = "menu,menuone,noinsert";
         };
 
