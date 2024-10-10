@@ -82,6 +82,7 @@
               };
             };
           };
+          path_display = [ "smart" ];
           prompt_prefix = "   ";
           selection_caret = "  ";
           sorting_strategy = "ascending";
