@@ -83,8 +83,9 @@
             };
           };
           path_display = [ "smart" ];
-          prompt_prefix = "   ";
+          prompt_prefix = "  ";
           selection_caret = "  ";
+          results_title = false;
           sorting_strategy = "ascending";
           file_ignore_patterns = [
             "^.git/"
