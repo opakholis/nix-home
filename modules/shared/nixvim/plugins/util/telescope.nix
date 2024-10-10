@@ -92,8 +92,19 @@
             "^.github/"
             "^.vscode/"
             "^gradle/"
-            "^node_modiules/*"
+            "^node_modules/*"
             "%.lock"
+            # media
+            "%.jpg"
+            "%.jpeg"
+            "%.png"
+            "%.svg"
+            "%.webp"
+            # fonts
+            "%.otf"
+            "%.ttf"
+            "%.woff"
+            "%.woff2"
           ];
           set_env.COLORTERM = "truecolor";
         };
