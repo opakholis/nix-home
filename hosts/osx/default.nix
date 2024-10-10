@@ -1,4 +1,4 @@
-{ ... }:
+{ outputs, ... }:
 {
   imports = [
     ../../modules/darwin/brew.nix
@@ -27,6 +27,13 @@
       experimental-features = "nix-command flakes";
       auto-optimise-store = true;
     };
+  };
+
+  nixpkgs = {
+    # List of Nixpkgs overlays.
+    overlays = [
+      outputs.overlays.stable-packages
+    ];
   };
 
   # Used for backwards compatibility, please read the changelog before changing.

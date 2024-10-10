@@ -4,16 +4,18 @@
   inputs = {
     # Packages
     nixpkgs.url = "github:NixOS/nixpkgs";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs-stable-darwin.url = "github:nixos/nixpkgs/nixpkgs-24.05-darwin";
 
     # Darwin system
     darwin.url = "github:LnL7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
-    ## Home manager
+    # Home manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    ## Neovim
+    # Neovim
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -21,12 +23,16 @@
   outputs =
     {
       nixpkgs,
+      nixpkgs-stable,
+      nixpkgs-stable-darwin,
       nixvim,
       darwin,
       home-manager,
+      self,
       ...
     }@inputs:
     let
+      inherit (self) outputs;
       user = "opakholis";
       systems = [
         "x86_64-linux"
@@ -43,10 +49,12 @@
         );
     in
     {
+      overlays = import ./overlays { inherit inputs; };
+
       nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {
-          inherit inputs;
+          inherit inputs outputs;
         };
         modules = [
           nixvim.nixosModules.nixvim
@@ -64,7 +72,7 @@
       darwinConfigurations."osx" = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         specialArgs = {
-          inherit inputs;
+          inherit inputs outputs;
         };
         modules = [
           # The flake-based setup of the Home Manager nix-darwin module

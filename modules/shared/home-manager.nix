@@ -83,6 +83,7 @@ in
   # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.tmux.enable
   tmux = {
     enable = true;
+    package = pkgs.stable.tmux;
     mouse = true;
     baseIndex = 1;
     keyMode = "vi";

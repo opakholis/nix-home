@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ outputs, pkgs, ... }:
 let
   user = "opakholis";
 in
@@ -44,6 +44,13 @@ in
     "nix-command"
     "flakes"
   ];
+
+  nixpkgs = {
+    # List of Nixpkgs overlays.
+    overlays = [
+      outputs.overlays.stable-packages
+    ];
+  };
 
   # Enable to make sway happy
   security.rtkit.enable = true;
