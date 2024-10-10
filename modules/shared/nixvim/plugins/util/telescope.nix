@@ -60,10 +60,30 @@
       settings = {
         defaults = {
           layout_config = {
+            width = 0.85;
+            height = 0.75;
+            preview_cutoff = 120;
+            prompt_position = "top";
             horizontal = {
-              prompt_position = "top";
+              preview_width.__raw = ''
+                function(_, cols, _)
+                  return math.floor(cols * 0.5)
+                end
+              '';
+            };
+            vertical = {
+              width = 0.5;
+              height = 0.6;
+              preview_height = 0.5;
+            };
+            flex = {
+              horizontal = {
+                preview_width = 0.8;
+              };
             };
           };
+          prompt_prefix = "   ";
+          selection_caret = "  ";
           sorting_strategy = "ascending";
           file_ignore_patterns = [
             "^.git/"
