@@ -4,9 +4,6 @@
     plugins.telescope = {
       enable = true;
       extensions = {
-        file-browser = {
-          enable = true;
-        };
         ui-select = {
           enable = true;
         };
@@ -80,6 +77,14 @@
               horizontal = {
                 preview_width = 0.8;
               };
+            };
+          };
+          mappings = {
+            i = {
+              "<C-n>".__raw = "require('telescope.actions').cycle_history_next";
+              "<C-p>".__raw = "require('telescope.actions').cycle_history_prev";
+              "<C-j>".__raw = "require('telescope.actions').move_selection_next";
+              "<C-k>".__raw = "require('telescope.actions').move_selection_previous";
             };
           };
           path_display = [ "smart" ];
