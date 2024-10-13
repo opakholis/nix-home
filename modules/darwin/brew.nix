@@ -48,6 +48,7 @@
       "iina"
       "keka"
       "monitorcontrol"
+      "syncthing"
     ];
 
     # Apps to install from the Mac App Store.
