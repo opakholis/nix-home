@@ -18,4 +18,8 @@ shared-packages
   # react-native development
   darwin.ios-deploy
   zulu11
+
+  # security
+  stable.bitwarden-cli
+
 ]
