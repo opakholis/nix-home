@@ -3,6 +3,7 @@
   imports = [
     ./options
     ./plugins
+    ./themes
   ];
 
   programs.nixvim = {
