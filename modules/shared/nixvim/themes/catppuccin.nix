@@ -11,8 +11,10 @@
           alpha = true;
           cmp = true;
           harpoon = true;
+          hop = true;
           gitsigns = true;
           indent_blankline.enabled = true;
+          lsp_trouble = true;
           native_lsp.enabled = true;
           nvimtree = true;
           treesitter = true;
