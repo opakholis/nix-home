@@ -22,7 +22,8 @@
         };
       }
 
-      ## from NVChad https://nvchad.com/docs/recipes (this autocmd will restore the cursor position when opening a file)
+      # Restore cursor position when opening a file
+      # from NVChad https://nvchad.com/docs/recipes
       {
         group = "restore_cursor";
         event = [ "BufReadPost" ];

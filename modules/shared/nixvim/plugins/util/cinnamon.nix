@@ -14,13 +14,13 @@
     ];
     extraConfigLua = ''
       require("cinnamon").setup {
-          keymaps = {
-              basic = true,
-              extra = true,
-          },
-          max_delta = {
-            time = 100,
-          },
+        keymaps = {
+          basic = true,
+          extra = true,
+        },
+        max_delta = {
+          time = 100,
+        },
       }
     '';
   };
