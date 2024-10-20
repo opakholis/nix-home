@@ -14,6 +14,10 @@
           hop = true;
           gitsigns = true;
           indent_blankline.enabled = true;
+          illuminate = {
+            enable = true;
+            lsp = true;
+          };
           lsp_trouble = true;
           native_lsp.enabled = true;
           nvimtree = true;

@@ -3,7 +3,7 @@
   imports = [
     ./autopairs.nix
     ./cmp.nix
-    ./hop.nix
+    ./illuminate.nix
     ./rainbow.nix
     ./indent-blankline.nix
     ./treesitter.nix
