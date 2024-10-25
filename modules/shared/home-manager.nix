@@ -186,93 +186,91 @@ in
   zsh = {
     enable = true;
     autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
+    historySubstringSearch.enable = true;
+    syntaxHighlighting = {
+      enable = true;
+      highlighters = [
+        "main"
+        "brackets"
+        "pattern"
+      ];
+    };
     history = {
       expireDuplicatesFirst = true;
       extended = true;
-      ignoreAllDups = true;
       ignoreDups = true;
       ignoreSpace = true;
     };
-    initExtraFirst = ''
+    defaultKeymap = "viins";
+    initExtra = ''
       # Fix brew path
-      if [ -f /opt/homebrew/bin/brew ]; then
+      if [ -f "/opt/homebrew/bin/brew" ]; then
         eval "$(/opt/homebrew/bin/brew shellenv)"
       fi
-    '';
-    initExtra = ''
+
+      # Android development
+      if [ -d "$HOME/Library/Android/sdk" ]; then
+        export ANDROID_HOME="$HOME/Library/Android/sdk"
+        export PATH="$PATH:$ANDROID_HOME/emulator"
+        export PATH="$PATH:$ANDROID_HOME/platform-tools"
+        export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin"
+      fi
+
+      # iOS development
+      if [ -s "$HOME/.cargo/env" ]; then
+        source "$HOME/.cargo/env"
+      fi
+
+      if [ -d "$HOME/.rvm" ]; then
+        export PATH="$PATH:$HOME/.rvm/bin"
+      fi
+
+      # Spotify
+      if [ -f "$HOME/.spicetify/spicetify" ]; then
+        export PATH="$PATH:$HOME/.spicetify/"
+      fi
+
       # Do menu-driven completion
       zstyle ':completion:*' menu select
-
-      # Bind up and down arrow keys to search history
-      autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
-      zle -N up-line-or-beginning-search
-      zle -N down-line-or-beginning-search
-      bindkey "^[[A" up-line-or-beginning-search
-      bindkey "^[[B" down-line-or-beginning-search
 
       # More tweaks
       # see: man zshoptions
       setopt auto_cd interactive_comments
-
-      # Create aliases for packages if they exist
-      create_alias() {
-        local pkg_name=$1
-        local alias_name=$2
-
-        if command -v "$pkg_name" > /dev/null 2>&1; then
-          alias "$alias_name"="$pkg_name"
-        fi
-      }
-
-      # <pkg_name> <alias_name>
-      create_alias zoxide cd
-      create_alias eza ls
-      create_alias bat cat
-      create_alias lazygit gg
     '';
-    initExtraBeforeCompInit = ''
-      # Typewritten theme
-      TYPEWRITTEN_SYMBOL="▲"
-      TYPEWRITTEN_DISABLE_RETURN_CODE=true
-    '';
+    sessionVariables = {
+      # Override history search highlight
+      HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND = "fg=magenta";
+      HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND = "";
+
+      # Pure prompt
+      PURE_PROMPT_SYMBOL = "›";
+      PURE_PROMPT_VICMD_SYMBOL = "›";
+    };
     plugins = [
       {
-        name = "typewritten";
-        src = builtins.fetchGit {
-          url = "https://github.com/reobin/typewritten";
-          rev = "6f78ec20f1a3a5b996716d904ed8c7daf9b76a2a";
-        };
+        name = "pure-prompt";
+        file = "share/zsh/site-functions/async";
+        src = pkgs.pure-prompt;
       }
       {
-        name = "zsh-autopair";
-        src = builtins.fetchGit {
-          url = "https://github.com/hlissner/zsh-autopair";
-          rev = "396c38a7468458ba29011f2ad4112e4fd35f78e6";
-        };
+        name = "pure-prompt";
+        file = "share/zsh/site-functions/prompt_pure_setup";
+        src = pkgs.pure-prompt;
       }
       {
-        name = "zsh-vi-mode";
-        file = "zsh-vi-mode.plugin.zsh";
-        src = builtins.fetchGit {
-          url = "https://github.com/jeffreytse/zsh-vi-mode";
-          rev = "ea1f58ab9b1f3eac50e2cde3e3bc612049ef683b";
-        };
+        name = "vi-mode";
+        src = pkgs.zsh-vi-mode;
+        file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
       }
     ];
     shellAliases = {
-      # Enable aliases to be sudo’ed
-      sudo = "sudo ";
-
       # Common
       c = "clear";
       q = "exit";
-
-      # rabbit navigation
-      ".." = "cd ..";
-      "..." = "cd ../..";
-      "...." = "cd ../../..";
-
+      cd = "zoxide";
+      cat = "bat";
+      gg = "lazygit";
+      ls = "eza";
       # git
       g = "git";
       ga = "git add";
@@ -285,6 +283,10 @@ in
       gco = "git checkout";
       gcb = "git checkout -b";
       gcl = "git clone";
+      # rabbit navigation
+      ".." = "./..";
+      "..." = "./../..";
+      "...." = "./../../..";
     };
   };
 
