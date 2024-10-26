@@ -19,7 +19,7 @@
     keymaps = [
       {
         mode = "n";
-        key = "<leader>ll";
+        key = "<leader>lc";
         action.__raw = ''
           function()
             require("lint").try_lint()
