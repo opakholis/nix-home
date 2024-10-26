@@ -88,7 +88,6 @@ in
     baseIndex = 1;
     keyMode = "vi";
     prefix = "C-Space";
-
     plugins = with pkgs.tmuxPlugins; [
       sensible
       {
@@ -99,7 +98,6 @@ in
         '';
       }
     ];
-
     extraConfig = ''
       # TODO: use nix-colors
       # Catppucin colorscheme
@@ -241,7 +239,6 @@ in
       # Override history search highlight
       HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND = "fg=magenta";
       HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND = "";
-
       # Pure prompt
       PURE_PROMPT_SYMBOL = "›";
       PURE_PROMPT_VICMD_SYMBOL = "›";

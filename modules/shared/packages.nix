@@ -1,11 +1,8 @@
 { pkgs, ... }:
-# Shared packages for all users
+# Shared packages for all hosts
 # https://nix-community.github.io/home-manager/options.xhtml#opt-home.packages
 with pkgs;
 [
-  # lsp related
-  alejandra
-
   # terminal utilities
   curl
   eza
