@@ -65,7 +65,7 @@
       {
         mode = "n";
         key = "<leader>bf";
-        action = "<cmd>Telescope buffers previewer=false<cr>";
+        action = "<cmd>Telescope buffers sort_mru=true previewer=false<cr>";
         options = {
           desc = "Find";
         };
