@@ -35,15 +35,39 @@
         key = "<leader>bb";
         action = "<cmd>lua buf_kill()<cr>";
         options = {
-          desc = "Delete buffer";
+          desc = "Close";
         };
       }
       {
         mode = "n";
-        key = "<leader>bo";
+        key = "<leader>ba";
         action = "<cmd>BufferLineCloseOthers<cr>";
         options = {
-          desc = "Delete other buffers";
+          desc = "Close all";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>bl";
+        action = "<cmd>BufferLineCloseRight<cr>";
+        options = {
+          desc = "Close all to the right";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>bh";
+        action = "<cmd>BufferLineCloseLeft<cr>";
+        options = {
+          desc = "Close all to the left";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>bf";
+        action = "<cmd>Telescope buffers previewer=false<cr>";
+        options = {
+          desc = "Find";
         };
       }
       {
