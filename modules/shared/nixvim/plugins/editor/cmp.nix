@@ -45,7 +45,7 @@
 
         mapping = {
           "<C-Space>" = "cmp.mapping.complete()";
-          "<C-e>" = "cmp.mapping.abort()";
+          "<C-c>" = "cmp.mapping.abort()";
           "<C-j>" = "cmp.mapping.select_next_item()";
           "<C-k>" = "cmp.mapping.select_prev_item()";
           "<Up>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
