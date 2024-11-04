@@ -54,10 +54,6 @@
             action = "rename";
             desc = "Rename";
           };
-          "<leader>la" = {
-            action = "code_action";
-            desc = "Code Action";
-          };
         };
         diagnostic = {
           "<leader>lj" = {
@@ -71,6 +67,16 @@
           "gl" = "open_float";
         };
         extra = [
+          {
+            mode = "n";
+            key = "<leader>la";
+            action = "<cmd>lua require('fastaction').code_action()<cr>";
+            options = {
+              desc = "Code Action";
+              silent = true;
+              buffer = true;
+            };
+          }
           {
             mode = "n";
             key = "<leader>lf";
