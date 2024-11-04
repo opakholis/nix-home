@@ -59,6 +59,17 @@
             desc = "Code Action";
           };
         };
+        diagnostic = {
+          "<leader>lj" = {
+            action = "goto_prev";
+            desc = "Previous Diagnostic";
+          };
+          "<leader>lk" = {
+            action = "goto_next";
+            desc = "Next Diagnostic";
+          };
+          "gl" = "open_float";
+        };
         extra = [
           {
             mode = "n";
@@ -66,14 +77,10 @@
             action = "<cmd>lua require('conform').format()<cr>";
             options = {
               desc = "Format";
+              silent = true;
             };
           }
         ];
-        diagnostic = {
-          "[d" = "goto_next";
-          "]d" = "goto_prev";
-          "gl" = "open_float";
-        };
       };
     };
     extraConfigLuaPre = ''
