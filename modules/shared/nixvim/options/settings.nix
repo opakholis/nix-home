@@ -49,6 +49,9 @@
       # Save undo history
       undofile = true;
 
+      # Disable annoying swap files
+      swapfile = false;
+
       # Case-insensitive searching UNLESS \C or one or more capital letters in the search term
       ignorecase = true;
       smartcase = true;
