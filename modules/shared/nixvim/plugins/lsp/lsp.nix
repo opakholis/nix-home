@@ -58,11 +58,11 @@
         diagnostic = {
           "<leader>lj" = {
             action = "goto_prev";
-            desc = "Previous Diagnostic";
+            desc = "Previous diagnostic";
           };
           "<leader>lk" = {
             action = "goto_next";
-            desc = "Next Diagnostic";
+            desc = "Next diagnostic";
           };
           "gl" = "open_float";
         };
@@ -72,7 +72,7 @@
             key = "<leader>la";
             action = "<cmd>lua require('fastaction').code_action()<cr>";
             options = {
-              desc = "Code Action";
+              desc = "Code action";
               silent = true;
               buffer = true;
             };

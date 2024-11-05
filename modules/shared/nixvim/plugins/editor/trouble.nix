@@ -1,22 +1,20 @@
 { ... }:
 {
   programs.nixvim = {
-    plugins = {
-      trouble = {
-        enable = true;
-        settings = {
-          auto_close = true;
-        };
+    plugins.trouble = {
+      enable = true;
+      settings = {
+        auto_close = true;
       };
-
-      which-key.settings.spec = [
-        {
-          __unkeyed = "<leader>x";
-          group = "Trouble";
-          icon = " ";
-        }
-      ];
     };
+
+    plugins.which-key.settings.spec = [
+      {
+        __unkeyed = "<leader>x";
+        group = "Trouble";
+        icon = " ";
+      }
+    ];
 
     keymaps = [
       {

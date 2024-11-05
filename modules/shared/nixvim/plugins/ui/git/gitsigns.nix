@@ -17,52 +17,52 @@
 
     keymaps = [
       {
-        mode = [ "n" ];
+        mode = "n";
         key = "<leader>gl";
         action = "<cmd>lua require 'gitsigns'.blame_line()<cr>";
-        options.desc = "Blame Line";
+        options.desc = "Blame line";
       }
       {
-        mode = [ "n" ];
+        mode = "n";
         key = "<leader>gL";
         action = "<cmd>lua require 'gitsigns'.blame_line({full=true})<cr>";
-        options.desc = "Blame Line (Full)";
+        options.desc = "Blame line full";
       }
       {
-        mode = [ "n" ];
+        mode = "n";
         key = "<leader>gj";
         action = "<cmd>lua require 'gitsigns'.nav_hunk('next', {navigation_message = false})<cr>";
-        options.desc = "Next Hunk";
+        options.desc = "Next hunk";
       }
       {
-        mode = [ "n" ];
+        mode = "n";
         key = "<leader>gk";
         action = "<cmd>lua require 'gitsigns'.nav_hunk('prev', {navigation_message = false})<cr>";
-        options.desc = "Prev Hunk";
+        options.desc = "Prev hunk";
       }
       {
-        mode = [ "n" ];
+        mode = "n";
         key = "<leader>gp";
         action = "<cmd>lua require 'gitsigns'.preview_hunk()<cr>";
-        options.desc = "Preview Hunk";
+        options.desc = "Preview hunk";
       }
       {
-        mode = [ "n" ];
+        mode = "n";
         key = "<leader>gu";
         action = "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>";
-        options.desc = "Undo Stage Hunk";
+        options.desc = "Undo stage hunk";
       }
       {
-        mode = [ "n" ];
+        mode = "n";
         key = "<leader>gr";
         action = "<cmd>lua require 'gitsigns'.reset_hunk()<cr>";
-        options.desc = "Reset Hunk";
+        options.desc = "Reset hunk";
       }
       {
-        mode = [ "n" ];
+        mode = "n";
         key = "<leader>gR";
         action = "<cmd>lua require 'gitsigns'.reset_buffer()<cr>";
-        options.desc = "Reset Buffer";
+        options.desc = "Reset buffer";
       }
     ];
   };
