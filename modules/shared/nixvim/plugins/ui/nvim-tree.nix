@@ -9,8 +9,8 @@
       filters = {
         custom = [
           "node_modules"
-          ".git"
-          ".cache"
+          "^\.git"
+          "^\.cache"
         ];
       };
       renderer = {
@@ -29,7 +29,6 @@
       onAttach.__raw = ''
         function (bufnr)
           local api = require "nvim-tree.api"
-
           local function opts(desc)
             return {
               desc = "nvim-tree: " .. desc,
