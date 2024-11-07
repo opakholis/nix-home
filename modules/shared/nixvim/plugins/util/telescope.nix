@@ -37,21 +37,21 @@
         };
 
         # Git
-        "<leader>gb" = {
+        "<leader>gtb" = {
           action = "git_branches";
-          options.desc = "View git branches";
+          options.desc = "View branches";
         };
-        "<leader>gc" = {
+        "<leader>gtc" = {
           action = "git_commits";
-          options.desc = "View git commits";
+          options.desc = "View commits";
         };
-        "<leader>gC" = {
+        "<leader>gtC" = {
           action = "git_bcommits";
-          options.desc = "View git commits (current buffer)";
+          options.desc = "View [B]commits";
         };
-        "<leader>gs" = {
+        "<leader>gtt" = {
           action = "git_status";
-          options.desc = "View git status";
+          options.desc = "View status";
         };
       };
       settings = {
@@ -115,5 +115,13 @@
         };
       };
     };
+
+    plugins.which-key.settings.spec = [
+      {
+        __unkeyed = "<leader>gt";
+        group = "Telescope View";
+        icon = " ";
+      }
+    ];
   };
 }
