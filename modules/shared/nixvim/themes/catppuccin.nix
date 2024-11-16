@@ -19,7 +19,19 @@
             lsp = true;
           };
           lsp_trouble = true;
-          native_lsp.enabled = true;
+          native_lsp = {
+            enabled = true;
+            underlines = {
+              errors = [ "underline" ];
+              hints = [ "underline" ];
+              warnings = [ "underline" ];
+              information = [ "underline" ];
+              ok = [ "underline" ];
+            };
+            inlay_hints = {
+              background = true;
+            };
+          };
           nvimtree = true;
           treesitter = true;
           telescope = {
