@@ -18,6 +18,13 @@ let
       };
     }
   ];
+
+  filetypes = [
+    "typescript"
+    "typescriptreact"
+    "javascript"
+    "javascriptreact"
+  ];
 in
 {
   programs.nixvim = {
@@ -36,17 +43,13 @@ in
       };
     };
 
-    files."ftplugin/typescript.lua" = {
-      keymaps = keymaps;
-    };
-    files."ftplugin/typescriptreact.lua" = {
-      keymaps = keymaps;
-    };
-    files."ftplugin/javascript.lua" = {
-      keymaps = keymaps;
-    };
-    files."ftplugin/javascriptreact.lua" = {
-      keymaps = keymaps;
-    };
+    files = builtins.listToAttrs (
+      map (ft: {
+        name = "ftplugin/${ft}.lua";
+        value = {
+          keymaps = keymaps;
+        };
+      }) filetypes
+    );
   };
 }
