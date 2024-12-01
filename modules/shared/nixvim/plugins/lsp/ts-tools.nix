@@ -12,7 +12,7 @@ let
     {
       mode = "n";
       key = "<leader>llr";
-      action = "<cmd>TSToolsRemoveUnusedImports<cr>";
+      action = "<cmd>TSToolsRemoveUnused<cr>";
       options = {
         desc = "Remove Unused Imports";
       };
