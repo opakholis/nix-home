@@ -23,14 +23,16 @@ in
   programs.nixvim = {
     plugins.typescript-tools = {
       enable = true;
-      handlers = {
-        "textDocument/publishDiagnostics" = ''
-          require("typescript-tools.api").filter_diagnostics({
-            -- https://github.com/microsoft/TypeScript/blob/main/src/compiler/diagnosticMessages.json
-            80001,
-            7016,
-          })
-        '';
+      settings = {
+        handlers = {
+          "textDocument/publishDiagnostics" = ''
+            require("typescript-tools.api").filter_diagnostics({
+              -- https://github.com/microsoft/TypeScript/blob/main/src/compiler/diagnosticMessages.json
+              80001,
+              7016,
+            })
+          '';
+        };
       };
     };
 

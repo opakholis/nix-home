@@ -21,11 +21,10 @@
       options = "--delete-older-than 7d";
     };
 
-    # `experimental-features` | enable nix flakes
-    # `auto-optimise-store` | optimise nix store every build
+    optimise.automatic = true;
+
     settings = {
       experimental-features = "nix-command flakes";
-      auto-optimise-store = true;
     };
   };
 
