@@ -36,6 +36,9 @@
         nil_ls = {
           enable = true;
         };
+        tailwindcss = {
+          enable = true;
+        };
         ts_ls = {
           enable = true;
         };
