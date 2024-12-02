@@ -180,6 +180,11 @@ in
     ];
   };
 
+  # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.yt-dlp.enable
+  yt-dlp = {
+    enable = true;
+  };
+
   # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.zsh.enable
   zsh = {
     enable = true;
