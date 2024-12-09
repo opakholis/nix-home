@@ -49,6 +49,7 @@
         group = "lazy_close";
         event = [ "FileType" ];
         pattern = [
+          "grug-far"
           "help"
           "man"
           "qf"
