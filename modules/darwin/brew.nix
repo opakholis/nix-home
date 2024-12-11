@@ -47,6 +47,7 @@
       "cleanshot"
       "iina"
       "keka"
+      "daisydisk"
       "monitorcontrol"
       "syncthing"
     ];
