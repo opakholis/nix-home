@@ -233,6 +233,10 @@ in
         export PATH="$PATH:$HOME/.spicetify/"
       fi
 
+      # Use nvim as manpager `:h Man`
+      export MANPAGER='nvim +Man!'
+      export MANWIDTH=999
+
       # Do menu-driven completion
       zstyle ':completion:*' menu select
 
