@@ -159,15 +159,6 @@
         action = "<nop>";
       }
 
-      # Terminal
-      # Better escape
-      {
-        mode = "t";
-        key = "<esc>";
-        action = "<C-\\><C-n>";
-        options.silent = true;
-      }
-
       # Quit/Session
       {
         mode = "n";
