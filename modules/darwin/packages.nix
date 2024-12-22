@@ -16,8 +16,11 @@ shared-packages
   (yarn.override { nodejs = nodejs_18; })
 
   # react-native development
-  darwin.ios-deploy
+  ios-deploy
   zulu11
+
+  # run yt in terminal
+  ytfzf
 
   # security
   stable.bitwarden-cli

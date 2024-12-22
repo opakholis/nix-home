@@ -1,6 +1,12 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  pkgs,
+  config,
+  ...
+}:
 let
   user = "opakholis";
+  homeFiles = import ./files.nix { inherit config user; };
 in
 {
   # Explicitly set the username and home directory.
@@ -20,6 +26,8 @@ in
       {
         home = {
           packages = pkgs.callPackage ./packages.nix { };
+
+          file = homeFiles;
 
           # Extra $PATH which isn't managed by Home Manager.
           # https://nix-community.github.io/home-manager/options.xhtml#opt-home.sessionPath
