@@ -40,7 +40,7 @@
           };
           which_key = true;
         };
-        custom_highlights = ''
+        custom_highlights.__raw = ''
           function(cp)
             return {
               -- base config
@@ -51,6 +51,7 @@
 
               -- plugin
               TroubleNormal = { bg = cp.none },
+              NvimTreeNormal = { bg = cp.none },
 
               -- treesitter
               ["@field"] = { fg = cp.rosewater },
