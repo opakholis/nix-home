@@ -26,6 +26,7 @@
             javascriptreact = prettier;
             typescript = prettier;
             typescriptreact = prettier;
+            yaml = prettier;
           };
         format_after_save = {
           lsp_format = "fallback";
