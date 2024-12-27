@@ -37,6 +37,10 @@
   };
 
   system.defaults = {
+    NSGlobalDomain = {
+      AppleFontSmoothing = 2;
+    };
+
     dock = {
       autohide = true;
       show-recents = false;
