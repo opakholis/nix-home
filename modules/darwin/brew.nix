@@ -29,7 +29,7 @@
       "zen-browser"
 
       # development
-      "iterm2"
+      "ghostty"
       "orbstack"
       "openvpn-connect"
       "reactotron"
