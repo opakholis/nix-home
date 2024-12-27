@@ -30,7 +30,6 @@
 
       # development
       "ghostty"
-      "orbstack"
       "openvpn-connect"
       "reactotron"
       "visual-studio-code"
@@ -45,9 +44,9 @@
 
       # utilities
       "cleanshot"
+      "daisydisk"
       "iina"
       "keka"
-      "daisydisk"
       "monitorcontrol"
       "syncthing"
     ];
