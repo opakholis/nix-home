@@ -33,7 +33,7 @@
         lua_ls = {
           enable = true;
         };
-        nil_ls = {
+        nixd = {
           enable = true;
         };
         tailwindcss = {
