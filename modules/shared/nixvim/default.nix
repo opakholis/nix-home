@@ -12,6 +12,7 @@
     vimAlias = true;
     withNodeJs = true;
     withRuby = false;
+    withPython3 = false;
     clipboard = {
       register = "unnamedplus";
       providers = {
