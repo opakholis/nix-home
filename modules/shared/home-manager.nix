@@ -138,6 +138,14 @@ in
       set -g status-justify "centre"
       set -g status-position "bottom"
 
+      # Terminal type configuration
+      set -g default-terminal "xterm-ghostty"
+      set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'
+
+      # Undercurl support
+      set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'
+      set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m'
+
       # Copy mode like vi ways
       bind -T copy-mode-vi 'v' send -X begin-selection
       bind -T copy-mode-vi 'V' send -X select-line
