@@ -23,8 +23,6 @@
   outputs =
     {
       nixpkgs,
-      nixpkgs-stable,
-      nixpkgs-stable-darwin,
       nixvim,
       darwin,
       home-manager,
