@@ -9,7 +9,7 @@ shared-packages
 ++ [
   # common development
   scrcpy
-  watchman
+  stable.watchman
 
   # node.js development
   nodejs_18
