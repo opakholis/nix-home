@@ -11,15 +11,15 @@ in
 
       # Fonts
       font-family = "Symbols Nerd Font Mono"
-      font-family = "Hack"
-      font-family-bold = "Hack"
+      font-family = "CommitMono Regular"
+      font-family-bold = "CommitMono Bold"
       font-family-italic = "Maple Mono"
       font-family-bold-italic = "Maple Mono"
+      font-size = 14
       font-thicken = true
+      font-feature = -calt
       adjust-cell-width = -1
-      adjust-cell-height = 1
       adjust-underline-position = 1
-      adjust-underline-thickness = -1
 
       # Theme
       theme = "catppuccin-frappe"
@@ -27,19 +27,16 @@ in
       mouse-hide-while-typing = true
 
       # Window
-      window-width = 100
-      window-height = 25
-      window-padding-x = 12
+      window-padding-x = 6
+      window-padding-y = 0,2
       window-padding-balance = true
-      macos-titlebar-proxy-icon = "hidden"
+      macos-titlebar-style = "tabs"
       macos-option-as-alt = true
 
       # keybindings
+      keybind = super+s=ignore
       keybind = super+shift+i=inspector:toggle
       keybind = super+shift+r=reload_config
-
-      # Other
-      copy-on-select = clipboard
     '';
   };
   "${xdg_config}/ytfzf/conf.sh" = {

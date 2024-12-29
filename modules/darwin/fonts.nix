@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   fonts.packages = with pkgs; [
-    hack-font
+    commit-mono
     maple-mono
     nerd-fonts.symbols-only
   ];
