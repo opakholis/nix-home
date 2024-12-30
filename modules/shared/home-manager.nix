@@ -256,6 +256,8 @@ in
       # Override history search highlight
       HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND = "fg=magenta";
       HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND = "";
+      # Override vi-mode highlight
+      ZVM_VI_HIGHLIGHT_BACKGROUND = "black";
       # Pure prompt
       PURE_PROMPT_SYMBOL = "›";
       PURE_PROMPT_VICMD_SYMBOL = "›";
