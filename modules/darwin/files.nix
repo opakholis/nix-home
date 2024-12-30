@@ -23,6 +23,7 @@ in
 
       # Theme
       theme = "catppuccin-frappe"
+      title = ":: ghost in the shell ::"
       cursor-invert-fg-bg = true
       mouse-hide-while-typing = true
 
