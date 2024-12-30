@@ -58,7 +58,6 @@ in
     };
   };
 
-  # TODO: use nix-colors
   # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.lazygit.enable
   lazygit = {
     enable = true;
@@ -99,7 +98,6 @@ in
       }
     ];
     extraConfig = ''
-      # TODO: use nix-colors
       # Catppucin colorscheme
       cp_base="#303446"
       cp_surface="#414559"
@@ -173,7 +171,6 @@ in
     '';
   };
 
-  # TODO: use nix-colors
   # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.fzf.enable
   fzf = {
     enable = true;
@@ -218,6 +215,10 @@ in
       if [ -f "/opt/homebrew/bin/brew" ]; then
         eval "$(/opt/homebrew/bin/brew shellenv)"
       fi
+
+      # Default editor
+      export EDITOR='nvim'
+      export VISUAL='nvim'
 
       # Android development
       if [ -d "$HOME/Library/Android/sdk" ]; then
