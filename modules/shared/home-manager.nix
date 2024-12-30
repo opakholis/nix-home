@@ -284,7 +284,8 @@ in
       cd = "zoxide";
       cat = "bat";
       gg = "lazygit";
-      ls = "eza";
+      l = "eza --icons -alh";
+      ls = "eza --icons";
       # git
       g = "git";
       ga = "git add";
