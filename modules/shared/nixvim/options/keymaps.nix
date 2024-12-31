@@ -151,7 +151,7 @@
       # Better escape
       {
         mode = "t";
-        key = "<C-c>";
+        key = "<C-q>";
         action = "<C-\\><C-n>";
         options.silent = true;
       }
