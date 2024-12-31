@@ -6,17 +6,16 @@
       settings = {
         options = {
           always_show_bufferline = false;
-          diagnostics = "nvim_lsp";
           mode = "buffers";
-
+          diagnostics = "nvim_lsp";
           close_command.__raw = ''
             function(bufnr)
               buf_kill("bd", bufnr, false)
             end
           '';
-          close_icon = " ";
-          buffer_close_icon = "󰱝 ";
-          modified_icon = "󰔯 ";
+          close_icon = " ";
+          buffer_close_icon = " ";
+          modified_icon = " ";
           offsets = [
             {
               filetype = "NvimTree";
@@ -28,6 +27,19 @@
         };
       };
     };
+
+    plugins.which-key.settings.spec = [
+      {
+        __unkeyed = "<leader>b";
+        group = "Buffer";
+        icon = " ";
+      }
+      {
+        __unkeyed = "<leader>q";
+        group = "Quit";
+        icon = " ";
+      }
+    ];
 
     keymaps = [
       {

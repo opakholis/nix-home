@@ -88,7 +88,7 @@
             };
           };
           path_display = [ "smart" ];
-          prompt_prefix = "  ";
+          prompt_prefix = "   ";
           selection_caret = "  ";
           results_title = false;
           sorting_strategy = "ascending";
@@ -118,9 +118,14 @@
 
     plugins.which-key.settings.spec = [
       {
+        __unkeyed = "<leader>s";
+        group = "Search";
+        icon = " ";
+      }
+      {
         __unkeyed = "<leader>gt";
         group = "Telescope View";
-        icon = " ";
+        icon = " ";
       }
     ];
   };

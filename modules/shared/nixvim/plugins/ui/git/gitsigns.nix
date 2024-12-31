@@ -15,6 +15,14 @@
       };
     };
 
+    plugins.which-key.settings.spec = [
+      {
+        __unkeyed = "<leader>g";
+        group = "Git";
+        icon = " ";
+      }
+    ];
+
     keymaps = [
       {
         mode = "n";

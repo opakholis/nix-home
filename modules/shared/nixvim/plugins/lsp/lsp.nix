@@ -10,14 +10,14 @@
         enable = true;
         maxWidth = 70;
         menu = {
-          nvim_lsp = "[LSP]";
-          path = "[path]";
-          luasnip = "[snip]";
-          buffer = "[buffer]";
-          copilot = "[AI]";
+          nvim_lsp = ":: LSP";
+          path = ":: path";
+          buffer = ":: buffer";
+          copilot = ":: AI";
         };
       };
     };
+
     plugins.lsp = {
       enable = true;
       servers = {
@@ -92,6 +92,15 @@
         ];
       };
     };
+
+    plugins.which-key.settings.spec = [
+      {
+        __unkeyed = "<leader>l";
+        group = "LSP";
+        icon = "⚡";
+      }
+    ];
+
     extraConfigLuaPre = ''
       do
         local diagnostic_signs = { Error = "", Warn = "", Hint = "󰌵", Info = "" }
@@ -101,17 +110,16 @@
         end
       end
     '';
+
     extraConfigLua = ''
       -- Change border of documentation hover window
       vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
         vim.lsp.handlers.hover, { border = "rounded" }
       )
-
       -- Change border of signature help info
       vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
         vim.lsp.handlers.signature_help, { border = "rounded" }
       )
-
       -- Change border of LSP Info
       require('lspconfig.ui.windows').default_options = {
         border = "rounded"

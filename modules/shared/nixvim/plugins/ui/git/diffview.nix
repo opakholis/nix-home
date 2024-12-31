@@ -25,7 +25,7 @@ in
       {
         __unkeyed = "<leader>gd";
         group = "Diff";
-        icon = " ";
+        icon = " ";
       }
     ];
 

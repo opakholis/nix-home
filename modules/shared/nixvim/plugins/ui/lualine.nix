@@ -1,4 +1,4 @@
-{ helpers, ... }:
+{ ... }:
 {
   programs.nixvim.plugins = {
     lualine = {
@@ -35,7 +35,7 @@
             {
               __unkeyed-1.__raw = ''
                 function()
-                  return "󰀘"
+                  return "󰀘 "
                 end
               '';
             }
@@ -44,16 +44,16 @@
           lualine_b = [
             {
               __unkeyed-1 = "branch";
-              icon = "";
+              icon = " ";
             }
           ];
           lualine_c = [
             {
               __unkeyed-1 = "diff";
               symbols = {
-                added = " ";
-                modified = " ";
-                removed = " ";
+                added = " ";
+                modified = " ";
+                removed = " ";
               };
             }
           ];

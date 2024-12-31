@@ -12,7 +12,7 @@
       {
         __unkeyed = "<leader>x";
         group = "Trouble";
-        icon = " ";
+        icon = " ";
       }
     ];
 

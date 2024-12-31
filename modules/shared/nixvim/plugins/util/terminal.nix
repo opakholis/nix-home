@@ -7,9 +7,18 @@
         shade_terminals = false;
       };
     };
+
     plugins.lazygit = {
       enable = true;
     };
+
+    plugins.which-key.settings.spec = [
+      {
+        __unkeyed = "<leader>t";
+        group = "Term";
+        icon = " ";
+      }
+    ];
 
     keymaps = [
       {

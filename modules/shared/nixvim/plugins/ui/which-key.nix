@@ -29,38 +29,6 @@
           };
         };
         preset = "classic";
-        spec = [
-          {
-            __unkeyed = "<leader>b";
-            group = "Buffer";
-            icon = "󰊓 ";
-          }
-          {
-            __unkeyed = "<leader>l";
-            group = "LSP";
-            icon = " ";
-          }
-          {
-            __unkeyed = "<leader>s";
-            group = "Search";
-            icon = " ";
-          }
-          {
-            __unkeyed = "<leader>g";
-            group = "Git";
-            icon = " ";
-          }
-          {
-            __unkeyed = "<leader>t";
-            group = "Term";
-            icon = "󰙀 ";
-          }
-          {
-            __unkeyed = "<leader>q";
-            group = "Quit";
-            icon = "󰗼  ";
-          }
-        ];
         triggers = [
           {
             __unkeyed = "<leader>";
@@ -71,7 +39,7 @@
           }
         ];
         win = {
-          border = "single";
+          border = "rounded";
           padding = [
             2
             0
