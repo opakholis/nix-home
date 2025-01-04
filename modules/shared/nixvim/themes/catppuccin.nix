@@ -1,7 +1,7 @@
 { ... }:
 {
-  programs.nixvim.colorschemes = {
-    catppuccin = {
+  programs.nixvim = {
+    colorschemes.catppuccin = {
       enable = true;
       settings = {
         flavour = "frappe";
@@ -88,6 +88,12 @@
           end
         '';
       };
+    };
+
+    plugins.bufferline = {
+      settings.highlights.__raw = ''
+        require("catppuccin.groups.integrations.bufferline").get()
+      '';
     };
   };
 }
