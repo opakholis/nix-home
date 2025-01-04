@@ -23,10 +23,14 @@
         };
         "<leader>sl" = {
           action = "resume";
-          options.desc = "Last search";
+          options.desc = "Find last search";
         };
 
         # Meh
+        "<leader>sh" = {
+          action = "help_tags";
+          options.desc = "View helps";
+        };
         "<leader>sk" = {
           action = "keymaps";
           options.desc = "View keymaps";
