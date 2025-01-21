@@ -45,7 +45,6 @@
       # utilities
       "cleanshot"
       "daisydisk"
-      "iina"
       "keka"
       "monitorcontrol"
       "syncthing"
