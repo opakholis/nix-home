@@ -29,6 +29,7 @@
       "zen-browser"
 
       # development
+      "android-studio"
       "ghostty"
       "openvpn-connect"
       "reactotron"
