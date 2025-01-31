@@ -8,6 +8,7 @@ in
 shared-packages
 ++ [
   # common development
+  awscli2
   scrcpy
   watchman
 
