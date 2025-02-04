@@ -10,7 +10,6 @@ in
       # ghostty +show-config --default --docs
 
       # Fonts
-      font-family = "Symbols Nerd Font Mono"
       font-family = "CommitMono Regular"
       font-family-bold = "CommitMono Bold"
       font-family-italic = "Maple Mono"
