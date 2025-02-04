@@ -35,6 +35,8 @@ in
 
       # keybindings
       keybind = super+s=ignore
+      keybind = alt+left=unbind
+      keybind = alt+right=unbind
       keybind = super+shift+i=inspector:toggle
       keybind = super+shift+r=reload_config
     '';
