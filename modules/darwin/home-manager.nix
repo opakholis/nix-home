@@ -35,7 +35,7 @@ in
 
           # Should check the release notes before changing this value.
           # https://nix-community.github.io/home-manager/options.html#opt-home.stateVersion
-          stateVersion = "25.05";
+          stateVersion = "23.05";
         };
 
         programs = { } // import ../shared/home-manager.nix { inherit pkgs; };

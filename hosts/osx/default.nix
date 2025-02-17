@@ -7,9 +7,6 @@
     ../../modules/darwin/network.nix
   ];
 
-  # Make sure the nix daemon always runs,
-  services.nix-daemon.enable = true;
-
   nix = {
     # https://nixos.wiki/wiki/Storage_optimization
     gc = {
@@ -49,5 +46,5 @@
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
-  system.stateVersion = 5;
+  system.stateVersion = 4;
 }

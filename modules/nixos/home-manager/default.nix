@@ -10,7 +10,7 @@ in
     username = "${user}";
     homeDirectory = "/home/${user}";
     packages = pkgs.callPackage ./packages.nix { };
-    stateVersion = "23.11";
+    stateVersion = "23.05";
   };
 
   programs = shared-programs // {
