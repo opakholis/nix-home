@@ -87,7 +87,7 @@ in
     baseIndex = 1;
     keyMode = "vi";
     prefix = "C-Space";
-    plugins = with pkgs.tmuxPlugins; [
+    plugins = with pkgs.stable.tmuxPlugins; [
       sensible
       {
         plugin = resurrect;
