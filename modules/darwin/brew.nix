@@ -44,10 +44,10 @@
       "raycast"
 
       # utilities
+      "betterdisplay"
       "cleanshot"
       "daisydisk"
       "keka"
-      "monitorcontrol"
       "syncthing"
     ];
 
