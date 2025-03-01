@@ -1,7 +1,6 @@
 {
-  config,
   lib,
-  pkgs,
+  config,
   modulesPath,
   ...
 }:
@@ -38,7 +37,21 @@
     fsType = "ext4";
   };
 
-  swapDevices = [ { device = "/dev/disk/by-uuid/5879dcbb-6541-4139-8d49-f0ba49d2864a"; } ];
+  fileSystems."/mnt/mark-I" = {
+    device = "/dev/disk/by-uuid/cc10bdbf-348c-4330-aa4b-6c024099ab0e";
+    fsType = "ext4";
+  };
+
+  fileSystems."/mnt/mark-II" = {
+    device = "/dev/disk/by-uuid/d68514ab-294a-4d5a-aefc-35b34c1243f6";
+    fsType = "ext4";
+  };
+
+  swapDevices = [
+    {
+      device = "/dev/disk/by-uuid/5879dcbb-6541-4139-8d49-f0ba49d2864a";
+    }
+  ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
