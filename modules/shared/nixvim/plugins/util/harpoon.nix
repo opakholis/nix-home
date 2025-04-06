@@ -3,7 +3,6 @@
   programs.nixvim = {
     plugins.harpoon = {
       enable = true;
-      keymapsSilent = true;
     };
 
     plugins.which-key.settings.spec = [
@@ -17,27 +16,27 @@
     keymaps = [
       {
         key = "<leader>hh";
-        action = "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>";
+        action.__raw = "function() require'harpoon'.ui:toggle_quick_menu(require'harpoon':list()) end";
         options.desc = "Toggle UI";
       }
       {
         key = "<leader>ha";
-        action = "<cmd>lua require('harpoon.mark').add_file()<cr>";
+        action.__raw = "function() require'harpoon':list():add() end";
         options.desc = "Add file";
       }
       {
         key = "<leader>hj";
-        action = "<cmd>lua require('harpoon.ui').nav_file(1)<cr>";
+        action.__raw = "function() require'harpoon':list():select(1) end";
         options.desc = "Jump to [1]";
       }
       {
         key = "<leader>hk";
-        action = "<cmd>lua require('harpoon.ui').nav_file(2)<cr>";
+        action.__raw = "function() require'harpoon':list():select(2) end";
         options.desc = "Jump to [2]";
       }
       {
         key = "<leader>hl";
-        action = "<cmd>lua require('harpoon.ui').nav_file(3)<cr>";
+        action.__raw = "function() require'harpoon':list():select(3) end";
         options.desc = "Jump to [3]";
       }
     ];
