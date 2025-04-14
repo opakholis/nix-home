@@ -3,12 +3,10 @@
   # https://nix-community.github.io/home-manager/options.xhtml#opt-wayland.windowManager.sway.enable
   wayland.windowManager.sway = {
     enable = true;
-    config = rec {
+    config = {
       modifier = "Mod4";
-      terminal = "alacritty";
-
+      terminal = "foot";
       bars = [ ];
-
       colors = {
         background = "#1e1e2e";
         focused = {
@@ -47,17 +45,14 @@
           text = "#cdd6f4";
         };
       };
-
       output = {
         "*" = {
           bg = "${pkgs.sway}/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill";
         };
       };
-
       gaps = {
         inner = 10;
       };
-
       window = {
         border = 1;
         titlebar = false;
