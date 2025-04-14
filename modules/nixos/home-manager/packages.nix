@@ -5,9 +5,15 @@ let
 in
 shared-packages
 ++ [
+  aria2
   dig
-  htop
+  duf
+  gpg
   pfetch-rs
+
+  # tui
+  bottom
+  lazydocker
 
   # wayland stuff
   grim
