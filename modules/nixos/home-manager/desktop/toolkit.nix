@@ -1,20 +1,37 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
   # https://nix-community.github.io/home-manager/options.xhtml#opt-gtk.enable
   gtk = {
     enable = true;
-    theme = {
-      name = "Catppuccin-Frappe-Compact-Lavender-Dark";
+    font = {
+      name = "CommitMono";
+      size = 10;
+    };
+    theme = lib.mkForce {
+      name = "catppuccin-mocha-pink-standard+rimless";
       package = pkgs.catppuccin-gtk.override {
-        accents = [ "lavender" ];
-        size = "compact";
-        variant = "frappe";
+        accents = [
+          "blue"
+          "pink"
+        ];
+        size = "standard";
+        tweaks = [ "rimless" ];
+        variant = "mocha";
       };
     };
     cursorTheme = {
-      name = "Catppuccin-Frappe-Lavender-Cursors";
-      package = pkgs.catppuccin-cursors.frappeLavender;
+      name = "catppuccin-mocha-pink-cursors";
+      package = pkgs.catppuccin-cursors.mochaPink;
       size = 20;
+    };
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
+    };
+    gtk3.extraConfig = {
+      Settings = ''
+        gtk-application-prefer-dark-theme=1
+      '';
     };
   };
 
@@ -22,6 +39,7 @@
   qt = {
     enable = true;
     platformTheme.name = "gtk";
+    style.package = pkgs.catppuccin-qt5ct;
   };
 
   # https://nix-community.github.io/home-manager/options.xhtml#opt-home.pointerCursor
@@ -30,6 +48,6 @@
     x11.enable = true;
     package = pkgs.catppuccin-cursors.frappeLavender;
     name = "Catppuccin-Frappe-Lavender-Cursors";
-    size = 20;
+    size = 18;
   };
 }
