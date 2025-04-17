@@ -33,14 +33,19 @@
     ];
   };
 
-  system.defaults = {
-    NSGlobalDomain = {
-      AppleFontSmoothing = 2;
+  system = {
+    defaults = {
+      NSGlobalDomain = {
+        AppleFontSmoothing = 2;
+      };
+      dock = {
+        autohide = true;
+        show-recents = false;
+      };
     };
-
-    dock = {
-      autohide = true;
-      show-recents = false;
+    keyboard = {
+      enableKeyMapping = true;
+      remapCapsLockToEscape = true;
     };
   };
 
