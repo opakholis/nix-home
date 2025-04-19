@@ -2,7 +2,7 @@
 {
   imports = [
     ./autopairs.nix
-    ./cmp.nix
+    ./blink.nix
     ./comment.nix
     ./illuminate.nix
     ./rainbow.nix

@@ -1,23 +1,6 @@
 { ... }:
 {
   programs.nixvim = {
-    plugins.lspkind = {
-      enable = true;
-      symbolMap = {
-        Copilot = "";
-      };
-      cmp = {
-        enable = true;
-        maxWidth = 70;
-        menu = {
-          nvim_lsp = ":: LSP";
-          path = ":: path";
-          buffer = ":: buffer";
-          copilot = ":: AI";
-        };
-      };
-    };
-
     plugins.lsp = {
       enable = true;
       servers = {

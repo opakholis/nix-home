@@ -9,7 +9,7 @@
         term_colors = true;
         integrations = {
           alpha = true;
-          cmp = true;
+          blink_cmp = true;
           harpoon = true;
           hop = true;
           gitsigns = true;
