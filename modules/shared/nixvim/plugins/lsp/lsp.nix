@@ -80,7 +80,7 @@
       {
         __unkeyed = "<leader>l";
         group = "LSP";
-        icon = "⚡";
+        icon = "󱐋";
       }
     ];
   };
