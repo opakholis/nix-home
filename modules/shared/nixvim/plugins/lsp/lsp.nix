@@ -83,30 +83,5 @@
         icon = "⚡";
       }
     ];
-
-    extraConfigLuaPre = ''
-      do
-        local diagnostic_signs = { Error = "", Warn = "", Hint = "󰌵", Info = "" }
-        for type, icon in pairs(diagnostic_signs) do
-          local hl = "DiagnosticSign" .. type
-          vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-        end
-      end
-    '';
-
-    extraConfigLua = ''
-      -- Change border of documentation hover window
-      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-        vim.lsp.handlers.hover, { border = "rounded" }
-      )
-      -- Change border of signature help info
-      vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-        vim.lsp.handlers.signature_help, { border = "rounded" }
-      )
-      -- Change border of LSP Info
-      require('lspconfig.ui.windows').default_options = {
-        border = "rounded"
-      }
-    '';
   };
 }

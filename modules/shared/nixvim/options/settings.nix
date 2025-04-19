@@ -4,13 +4,22 @@
     diagnostics = {
       virtual_text = false;
       float = {
-        focusable = true;
-        style = "minimal";
         border = "rounded";
-        source = "always";
-        header = "";
-        prefix = "";
-        suffix = "";
+      };
+
+      signs = {
+        text = {
+          "__rawKey__vim.diagnostic.severity.ERROR" = "";
+          "__rawKey__vim.diagnostic.severity.WARN" = "";
+          "__rawKey__vim.diagnostic.severity.HINT" = "󰌵";
+          "__rawKey__vim.diagnostic.severity.INFO" = "";
+        };
+        texthl = {
+          "__rawKey__vim.diagnostic.severity.ERROR" = "DiagnosticError";
+          "__rawKey__vim.diagnostic.severity.WARN" = "DiagnosticWarn";
+          "__rawKey__vim.diagnostic.severity.HINT" = "DiagnosticHint";
+          "__rawKey__vim.diagnostic.severity.INFO" = "DiagnosticInfo";
+        };
       };
     };
 
@@ -63,8 +72,7 @@
       updatetime = 250;
 
       # Decrease mapped sequence wait time
-      # Displays which-key popup sooner
-      timeoutlen = 300;
+      timeoutlen = 500;
 
       # Configure how new splits should be opened
       splitright = true;
@@ -88,6 +96,9 @@
         foldsep = "│";
         foldclose = "▸";
       };
+
+      # Enable rounded borders in floating windows
+      winborder = "rounded";
 
       # Better completion experience
       # Max items in the completion menu
