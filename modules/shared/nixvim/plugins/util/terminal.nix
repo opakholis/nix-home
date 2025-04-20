@@ -3,6 +3,13 @@
   programs.nixvim = {
     plugins.toggleterm = {
       enable = true;
+      lazyLoad.settings = {
+        cmd = "ToggleTerm";
+        keys = [
+          "<leader>tt"
+          "<leader>gg"
+        ];
+      };
       settings = {
         shade_terminals = false;
       };

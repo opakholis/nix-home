@@ -3,6 +3,7 @@
   programs.nixvim = {
     colorschemes.catppuccin = {
       enable = true;
+      lazyLoad.enable = true;
       settings = {
         flavour = "frappe";
         transparent_background = false;

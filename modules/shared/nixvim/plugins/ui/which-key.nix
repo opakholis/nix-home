@@ -3,6 +3,9 @@
   programs.nixvim.plugins = {
     which-key = {
       enable = true;
+      lazyLoad.settings = {
+        event = "DeferredUIEnter";
+      };
       settings = {
         delay = 500;
         disable = {

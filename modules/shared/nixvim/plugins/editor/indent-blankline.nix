@@ -3,10 +3,12 @@
   programs.nixvim = {
     plugins.indent-blankline = {
       enable = true;
+      lazyLoad.settings = {
+        event = "DeferredUIEnter";
+      };
       settings = {
         indent = {
           char = "│"; # "│" or "▎"
-
         };
         scope = {
           show_end = false;

@@ -1,14 +1,12 @@
-{ pkgs, ... }:
+{ ... }:
 {
   programs.nixvim = {
-    extraPlugins = [
-      pkgs.vimPlugins.grug-far-nvim
-    ];
-    extraConfigLua = ''
-      require('grug-far').setup({
-        engine = 'ripgrep' -- or 'astgrep'
-      });
-    '';
+    plugins.grug-far = {
+      enable = true;
+      lazyLoad.settings = {
+        cmd = "GrugFar";
+      };
+    };
 
     keymaps = [
       {
