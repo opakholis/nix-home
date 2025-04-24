@@ -8,7 +8,7 @@ shared-packages
   aria2
   dig
   duf
-  gpg
+  gnupg
   pfetch-rs
 
   # tui
