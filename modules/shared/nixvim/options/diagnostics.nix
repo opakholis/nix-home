@@ -1,7 +1,7 @@
 { ... }:
 {
   programs.nixvim = {
-    diagnostics = {
+    diagnostic.config = {
       virtual_text = false;
 
       float.border = "rounded";
