@@ -19,6 +19,8 @@ in
   services.gnome-keyring.enable = true;
 
   # https://nix-community.github.io/home-manager/options.xhtml#opt-services.gpg-agent.enable
-  services.gpg-agent.enable = true;
-  services.gpg-agent.pinentryPackage = pkgs.pinentry-gnome3;
+  services.gpg-agent = {
+    enable = true;
+    pinentry.package = pkgs.pinentry-gnome3;
+  };
 }
