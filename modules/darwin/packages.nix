@@ -13,8 +13,8 @@ shared-packages
   watchman
 
   # node.js development
-  nodejs_18
-  (yarn.override { nodejs = nodejs_18; })
+  stable.nodejs_18
+  (yarn.override { nodejs = stable.nodejs_18; })
 
   # react-native development
   ios-deploy
