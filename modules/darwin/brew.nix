@@ -55,7 +55,8 @@
     # https://daiderd.com/nix-darwin/manual/index.html#opt-homebrew.masApps
     # See product identifier: `mas list`
     masApps = {
-      Xcode = 497799835;
+      # Fails to build with React Native < 0.76 — see: https://github.com/facebook/react-native/issues/50411
+      # Xcode = 497799835;
       TestFlight = 899247664;
     };
   };
