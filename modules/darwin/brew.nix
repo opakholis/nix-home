@@ -26,7 +26,7 @@
     casks = [
       # browers
       "arc"
-      "zen-browser"
+      "zen"
 
       # development
       "android-studio"
