@@ -18,7 +18,7 @@ shared-packages
 
   # react-native development
   ios-deploy
-  zulu11
+  zulu17
 
   # run yt in terminal
   ytfzf
