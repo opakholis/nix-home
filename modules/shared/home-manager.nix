@@ -20,15 +20,15 @@ in
         cp = pkgs.fetchFromGitHub {
           owner = "catppuccin";
           repo = "bat";
-          rev = "ba4d16880d63e656acced2b7d4e034e4a93f74b1";
-          sha256 = "1g2r6j33f4zys853i1c5gnwcdbwb6xv5w6pazfdslxf69904lrg9";
+          rev = "699f60fc8ec434574ca7451b444b88043031994";
+          sha256 = "sha256-6fWoCH90IGumAMc4buLRWL0N61op+AuMNN9CAR9/OdI=";
         };
       in
       {
-        catppuccin-latte.src = "${cp}/Catppuccin-latte.tmTheme";
-        catppuccin-frappe.src = "${cp}/Catppuccin-frappe.tmTheme";
-        catppuccin-macchiato.src = "${cp}/Catppuccin-macchiato.tmTheme";
-        catppuccin-mocha.src = "${cp}/Catppuccin-mocha.tmTheme";
+        catppuccin-latte.src = "${cp}/themes/Catppuccin latte.tmTheme";
+        catppuccin-frappe.src = "${cp}/themes/Catppuccin frappe.tmTheme";
+        catppuccin-macchiato.src = "${cp}/themes/Catppuccin macchiato.tmTheme";
+        catppuccin-mocha.src = "${cp}/themes/Catppuccin mocha.tmTheme";
       };
   };
 
