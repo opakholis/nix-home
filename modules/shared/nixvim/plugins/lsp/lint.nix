@@ -11,8 +11,8 @@
         src = pkgs.fetchFromGitHub {
           owner = "esmuellert";
           repo = "nvim-eslint";
-          rev = "e6bf849d1cc427e594b738b372aaf424541b953b";
-          hash = "sha256-FZibT6ocWhYfW3nka6o0HWFUi/jkPD1BrPzaVYyZ/yc=";
+          rev = "bcab40ed268b869cce8fde8e91d1c51ec26e5019";
+          hash = "sha256-pLWt/cNZiGZyMr+/Ana8Rk+yl7VNOp1Pw1m56EpVWLY=";
         };
       })
     ];
