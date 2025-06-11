@@ -17,6 +17,9 @@ in
     shell = pkgs.zsh;
   };
 
+  # Set the primary user for homebrew and other system-wide settings.
+  system.primaryUser = user;
+
   # Enable home-manager
   # https://nix-community.github.io/home-manager/index.xhtml#sec-flakes-nix-darwin-module
   home-manager = {
