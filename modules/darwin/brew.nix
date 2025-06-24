@@ -48,7 +48,7 @@
       "cleanshot"
       "daisydisk"
       "keka"
-      "syncthing"
+      "syncthing-app"
     ];
 
     # Apps to install from the Mac App Store.
