@@ -7,6 +7,10 @@
       settings = {
         flavour = "frappe";
         transparent_background = false;
+        float = {
+          transparent = false;
+          solid = true;
+        };
         term_colors = true;
         integrations = {
           alpha = true;
@@ -37,7 +41,6 @@
           treesitter = true;
           telescope = {
             enable = true;
-            style = "nvchad";
           };
           which_key = true;
         };
@@ -45,7 +48,6 @@
           function(cp)
             return {
               -- base config
-              NormalFloat = { bg = cp.none },
               Pmenu = { bg = cp.none },
               PmenuBar = { bg = cp.surface0 },
               TabLineSel = { bg = cp.pink },
@@ -93,7 +95,7 @@
 
     plugins.bufferline = {
       settings.highlights.__raw = ''
-        require("catppuccin.groups.integrations.bufferline").get()
+        require("catppuccin.groups.integrations.bufferline").get_theme()
       '';
     };
   };

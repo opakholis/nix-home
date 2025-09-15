@@ -82,12 +82,11 @@ in
   # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.tmux.enable
   tmux = {
     enable = true;
-    package = pkgs.stable.tmux;
     mouse = true;
     baseIndex = 1;
     keyMode = "vi";
     prefix = "C-Space";
-    plugins = with pkgs.stable.tmuxPlugins; [
+    plugins = with pkgs.tmuxPlugins; [
       sensible
       {
         plugin = resurrect;
@@ -105,6 +104,10 @@ in
       cp_text="#c6d0f5"
       cp_mauve="#ca9ee6"
       cp_lavender="#babbf1"
+
+      if-shell "uname | grep -q Darwin" {
+        set -g default-command "reattach-to-user-namespace $SHELL"
+      }
 
       set -g message-style "fg=$cp_lavender"
       set -g message-command-style "fg=$cp_text"

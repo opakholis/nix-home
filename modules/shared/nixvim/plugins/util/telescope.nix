@@ -6,29 +6,6 @@
       lazyLoad.settings = {
         cmd = "Telescope";
       };
-      luaConfig.pre = ''
-        --- workaround winborder on nvim 0.11
-        vim.api.nvim_create_autocmd("User", {
-          pattern = "TelescopeFindPre",
-          callback = function()
-            vim.opt_local.winborder = "none"
-            vim.api.nvim_create_autocmd("WinLeave", {
-              once = true,
-              callback = function()
-                vim.opt_local.winborder = "rounded"
-              end,
-            })
-          end,
-        })
-      '';
-      extensions = {
-        ui-select = {
-          enable = true;
-        };
-        fzf-native = {
-          enable = true;
-        };
-      };
       keymaps = {
         # File and text
         "<leader>ss" = {

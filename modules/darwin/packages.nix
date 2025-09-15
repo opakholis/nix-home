@@ -13,17 +13,14 @@ shared-packages
   watchman
 
   # node.js development
-  stable.nodejs_18
-  (yarn.override { nodejs = stable.nodejs_18; })
+  nodejs_22
+  (yarn.override { nodejs = stable.nodejs_22; })
 
   # react-native development
   ios-deploy
   zulu17
 
-  # run yt in terminal
+  # utilities
   ytfzf
-
-  # security
-  stable.bitwarden-cli
-
+  reattach-to-user-namespace
 ]

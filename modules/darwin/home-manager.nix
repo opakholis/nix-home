@@ -44,7 +44,7 @@ in
         programs = { } // import ../shared/home-manager.nix { inherit pkgs; };
 
         imports = [
-          inputs.nixvim.homeManagerModules.nixvim
+          inputs.nixvim.homeModules.nixvim
           ../shared/nixvim
         ];
       };

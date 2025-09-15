@@ -24,21 +24,6 @@
       };
     };
 
-    keymaps = [
-      {
-        mode = "n";
-        key = "<leader>lc";
-        action.__raw = ''
-          function()
-            require("lint").try_lint()
-          end
-        '';
-        options = {
-          desc = "Lint";
-        };
-      }
-    ];
-
     extraConfigLua = ''
       require('nvim-eslint').setup({})
     '';

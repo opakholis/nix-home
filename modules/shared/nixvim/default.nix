@@ -15,9 +15,6 @@
     withPython3 = false;
     clipboard = {
       register = "unnamedplus";
-      providers = {
-        wl-copy.enable = true;
-      };
     };
   };
 }

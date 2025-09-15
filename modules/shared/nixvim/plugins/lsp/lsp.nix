@@ -1,8 +1,7 @@
 { ... }:
 {
   programs.nixvim = {
-    plugins.lsp = {
-      enable = true;
+    lsp = {
       servers = {
         cssls = {
           enable = true;
@@ -22,58 +21,65 @@
         tailwindcss = {
           enable = true;
         };
-        ts_ls = {
-          enable = true;
-        };
       };
-      keymaps = {
-        silent = true;
-        lspBuf = {
-          K = "hover";
-          gh = "hover";
-          gr = "references";
-          gd = "definition";
-          gi = "implementation";
-          gt = "type_definition";
-          "<tab>" = "signature_help";
-          "<leader>lr" = {
-            action = "rename";
-            desc = "Rename";
+      keymaps = [
+        {
+          key = "gd";
+          lspBufAction = "definition";
+        }
+        {
+          key = "gD";
+          lspBufAction = "references";
+        }
+        {
+          key = "gt";
+          lspBufAction = "type_definition";
+        }
+        {
+          key = "gi";
+          lspBufAction = "implementation";
+        }
+        {
+          key = "K";
+          lspBufAction = "hover";
+        }
+        {
+          key = "<tab>";
+          lspBufAction = "signature_help";
+        }
+        {
+          key = "<leader>lr";
+          lspBufAction = "rename";
+          options.desc = "Rename";
+        }
+        {
+          key = "gl";
+          action.__raw = "vim.diagnostic.open_float";
+        }
+        {
+          mode = "n";
+          key = "<leader>la";
+          action = "<cmd>lua require('fastaction').code_action()<cr>";
+          options = {
+            desc = "Code action";
+            silent = true;
+            buffer = true;
           };
-        };
-        diagnostic = {
-          "<leader>lj" = {
-            action = "goto_prev";
-            desc = "Previous diagnostic";
+        }
+        {
+          mode = "n";
+          key = "<leader>lf";
+          action = "<cmd>lua require('conform').format()<cr>";
+          options = {
+            desc = "Format";
+            silent = true;
           };
-          "<leader>lk" = {
-            action = "goto_next";
-            desc = "Next diagnostic";
-          };
-          "gl" = "open_float";
-        };
-        extra = [
-          {
-            mode = "n";
-            key = "<leader>la";
-            action = "<cmd>lua require('fastaction').code_action()<cr>";
-            options = {
-              desc = "Code action";
-              silent = true;
-              buffer = true;
-            };
-          }
-          {
-            mode = "n";
-            key = "<leader>lf";
-            action = "<cmd>lua require('conform').format()<cr>";
-            options = {
-              desc = "Format";
-              silent = true;
-            };
-          }
-        ];
-      };
+        }
+      ];
+    };
+
+    plugins.lspconfig = {
+      enable = true;
     };
 
     plugins.which-key.settings.spec = [

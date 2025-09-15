@@ -14,7 +14,23 @@ let
       key = "<leader>llr";
       action = "<cmd>TSToolsRemoveUnused<cr>";
       options = {
+        desc = "Remove Unused";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>llR";
+      action = "<cmd>TSToolsRemoveUnusedImports<cr>";
+      options = {
         desc = "Remove Unused Imports";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>llo";
+      action = "<cmd>TSToolsOrganizeImports<cr>";
+      options = {
+        desc = "Organize Imports";
       };
     }
   ];
@@ -30,6 +46,14 @@ in
   programs.nixvim = {
     plugins.typescript-tools = {
       enable = true;
+      lazyLoad.settings = {
+        ft = [
+          "typescript"
+          "javascript"
+          "typescriptreact"
+          "javascriptreact"
+        ];
+      };
       settings = {
         handlers = {
           "textDocument/publishDiagnostics" = ''
@@ -42,6 +66,14 @@ in
         };
       };
     };
+
+    plugins.which-key.settings.spec = [
+      {
+        __unkeyed = "<leader>ll";
+        group = "TSTools";
+        icon = " ";
+      }
+    ];
 
     files = builtins.listToAttrs (
       map (ft: {
