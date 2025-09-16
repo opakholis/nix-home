@@ -21,7 +21,7 @@ in
       adjust-underline-position = 1
 
       # Theme
-      theme = "catppuccin-frappe"
+      theme = "Catppuccin Frappe"
       title = ":: ghost in the shell ::"
       cursor-invert-fg-bg = true
       mouse-hide-while-typing = true
