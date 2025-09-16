@@ -46,6 +46,7 @@
       # utilities
       "betterdisplay"
       "cleanshot"
+      "neardrop"
       "daisydisk"
       "keka"
       "syncthing-app"
