@@ -48,8 +48,6 @@
           function(cp)
             return {
               -- base config
-              Pmenu = { bg = cp.none },
-              PmenuBar = { bg = cp.surface0 },
               TabLineSel = { bg = cp.pink },
 
               -- plugin
