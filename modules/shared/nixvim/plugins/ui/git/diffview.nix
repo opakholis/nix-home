@@ -13,11 +13,13 @@ in
   programs.nixvim = {
     plugins.diffview = {
       enable = true;
-      enhancedDiffHl = true;
-      keymaps = {
-        view = mappings;
-        filePanel = mappings;
-        fileHistoryPanel = mappings;
+      settings = {
+        enhanced_diff_hl = true;
+        keymaps = {
+          view = mappings;
+          file_panel = mappings;
+          file_history_panel = mappings;
+        };
       };
     };
 
