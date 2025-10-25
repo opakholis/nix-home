@@ -21,6 +21,8 @@ shared-packages
   zulu17
 
   # utilities
-  ytfzf
+  gnupg
+  openssl
   reattach-to-user-namespace
+  ytfzf
 ]

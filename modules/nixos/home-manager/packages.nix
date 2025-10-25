@@ -6,9 +6,6 @@ in
 shared-packages
 ++ [
   aria2
-  dig
-  duf
-  gnupg
   pfetch-rs
 
   # tui

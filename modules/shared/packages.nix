@@ -5,8 +5,12 @@ with pkgs;
 [
   # terminal utilities
   curl
+  wget
+
+  # modern-unix
+  duf
   eza
+  fd
   jq
   ripgrep
-  wget
 ]
