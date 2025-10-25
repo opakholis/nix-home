@@ -41,9 +41,11 @@ in
   # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.git.enable
   git = {
     enable = true;
-    lfs.enable = true;
-    userName = w0.name;
-    userEmail = w0.email;
+    settings = {
+      init.defaultBranch = "main";
+      user.name = w0.name;
+      user.email = w0.email;
+    };
     signing = {
       key = w0.signingKey;
       signByDefault = true;
@@ -53,9 +55,6 @@ in
       "*.swp"
       ".DS_Store"
     ];
-    extraConfig = {
-      init.defaultBranch = "main";
-    };
   };
 
   # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.lazygit.enable
@@ -304,6 +303,8 @@ in
       gco = "git checkout";
       gcb = "git checkout -b";
       gcl = "git clone";
+      # shortcuts
+      ytdl = "yt-dlp -f 'bv*[ext=mp4][vcodec^=avc1]+ba[ext=m4a]/b[ext=mp4]' --merge-output-format mp4 -o '%(title)s.%(ext)s'";
       # rabbit navigation
       ".." = "./..";
       "..." = "./../..";
