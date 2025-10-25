@@ -25,7 +25,7 @@
     # https://daiderd.com/nix-darwin/manual/index.html#opt-homebrew.casks
     casks = [
       # browers
-      "arc"
+      "helium-browser"
       "zen"
 
       # development
