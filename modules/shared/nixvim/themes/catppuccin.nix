@@ -12,36 +12,33 @@
           solid = true;
         };
         term_colors = true;
+        lsp_styles = {
+          underlines = {
+            errors = [ "undercurl" ];
+            hints = [ "undercurl" ];
+            warnings = [ "undercurl" ];
+            information = [ "undercurl" ];
+            ok = [ "undercurl" ];
+          };
+          inlay_hints = {
+            background = true;
+          };
+        };
         integrations = {
           alpha = true;
           blink_cmp = true;
+          gitsigns = true;
           harpoon = true;
           hop = true;
-          gitsigns = true;
-          indent_blankline.enabled = true;
           illuminate = {
             enable = true;
             lsp = true;
           };
+          indent_blankline.enabled = true;
           lsp_trouble = true;
-          native_lsp = {
-            enabled = true;
-            underlines = {
-              errors = [ "undercurl" ];
-              hints = [ "undercurl" ];
-              warnings = [ "undercurl" ];
-              information = [ "undercurl" ];
-              ok = [ "undercurl" ];
-            };
-            inlay_hints = {
-              background = true;
-            };
-          };
           nvimtree = true;
+          telescope.enable = true;
           treesitter = true;
-          telescope = {
-            enable = true;
-          };
           which_key = true;
         };
         custom_highlights.__raw = ''
