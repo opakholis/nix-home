@@ -9,12 +9,12 @@ shared-packages
 ++ [
   # common development
   awscli2
-  scrcpy
+  stable-24.scrcpy
   watchman
 
   # node.js development
-  nodejs_22
-  (yarn.override { nodejs = stable.nodejs_22; })
+  stable-24.nodejs_18
+  (yarn.override { nodejs = stable-24.nodejs_18; })
 
   # react-native development
   ios-deploy
