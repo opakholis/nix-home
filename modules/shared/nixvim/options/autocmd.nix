@@ -50,6 +50,7 @@
         event = [ "FileType" ];
         pattern = [
           "grug-far"
+          "harpoon"
           "help"
           "man"
           "qf"
