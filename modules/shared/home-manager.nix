@@ -36,6 +36,7 @@ in
   direnv = {
     enable = true;
     nix-direnv.enable = true;
+    silent = true;
   };
 
   # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.git.enable
