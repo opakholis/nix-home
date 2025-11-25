@@ -13,6 +13,7 @@ in
     homeDirectory = "/home/${user}";
     packages = pkgs.callPackage ./packages.nix { };
     stateVersion = "23.05";
+    shell.enableZshIntegration = true;
   };
 
   # https://nix-community.github.io/home-manager/options.xhtml#opt-services.gnome-keyring.enable

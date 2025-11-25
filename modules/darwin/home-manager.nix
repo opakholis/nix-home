@@ -32,6 +32,8 @@ in
 
           file = homeFiles;
 
+          shell.enableZshIntegration = true;
+
           # Extra $PATH which isn't managed by Home Manager.
           # https://nix-community.github.io/home-manager/options.xhtml#opt-home.sessionPath
           sessionPath = [ "$HOME/.local/bin" ];
