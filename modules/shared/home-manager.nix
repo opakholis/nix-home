@@ -236,10 +236,6 @@ in
         source "$HOME/.cargo/env"
       fi
 
-      if [ -d "$HOME/.rvm" ]; then
-        export PATH="$PATH:$HOME/.rvm/bin"
-      fi
-
       # Spotify
       if [ -f "$HOME/.spicetify/spicetify" ]; then
         export PATH="$PATH:$HOME/.spicetify/"
@@ -251,12 +247,12 @@ in
 
       # Do menu-driven completion
       zstyle ':completion:*' menu select
-
-      # More tweaks
-      # see: man zshoptions
-      setopt auto_cd interactive_comments
     '';
-    sessionVariables = {
+    setOptions = [
+      "AUTO_CD"
+      "INTERACTIVE_COMMENTS"
+    ];
+    localVariables = {
       # Override history search highlight
       HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND = "fg=magenta";
       HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND = "";
