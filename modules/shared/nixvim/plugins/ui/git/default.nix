@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    ./diffview.nix
+    ./codediff.nix
     ./gitsigns.nix
   ];
 }
