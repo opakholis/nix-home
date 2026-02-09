@@ -77,11 +77,19 @@
           preset = "default";
           "<C-k>" = [
             "select_prev"
-            "fallback_to_mappings"
+            "fallback"
           ];
           "<C-j>" = [
             "select_next"
-            "fallback_to_mappings"
+            "fallback"
+          ];
+          "<C-d>" = [
+            "scroll_documentation_down"
+            "fallback"
+          ];
+          "<C-u>" = [
+            "scroll_documentation_up"
+            "fallback"
           ];
         };
       };
