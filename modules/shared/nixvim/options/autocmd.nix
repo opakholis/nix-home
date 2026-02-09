@@ -5,7 +5,6 @@
       highlight_yank = { };
       restore_cursor = { };
       lazy_close = { };
-
     };
 
     autoCmd = [
