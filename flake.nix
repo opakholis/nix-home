@@ -89,6 +89,6 @@
 
       # Formatter
       # Used by`nix fmt`
-      formatter = forEachSystem ({ pkgs, ... }: pkgs.nixfmt-rfc-style);
+      formatter = forEachSystem ({ pkgs, ... }: pkgs.nixfmt);
     };
 }
