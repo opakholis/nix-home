@@ -8,6 +8,12 @@
     plugins.blink-cmp = {
       enable = true;
       settings = {
+        cmdline = {
+          keymap.preset = "inherit";
+          completion = {
+            menu.auto_show = true;
+          };
+        };
         completion = {
           menu = {
             border = "rounded";
@@ -41,7 +47,6 @@
             "buffer"
             "copilot"
           ];
-          cmdline = [ ];
           providers = {
             buffer = {
               score_offset = -5;
