@@ -64,14 +64,14 @@ in
     settings = {
       gui.theme = {
         activeBorderColor = [
-          "#babbf1"
+          "#ef9f76"
           "bold"
         ];
-        inactiveBorderColor = [ "#a5adce" ];
+        inactiveBorderColor = [ "#303446" ];
         optionsTextColor = [ "#8caaee" ];
         selectedLineBgColor = [ "#414559" ];
-        cherryPickedCommitBgColor = [ "#51576d" ];
-        cherryPickedCommitFgColor = [ "#babbf1" ];
+        cherryPickedCommitBgColor = [ "#303446" ];
+        cherryPickedCommitFgColor = [ "#ef9f76" ];
         unstagedChangesColor = [ "#c6d0f5" ];
         defaultFgColor = [ "#c6d0f5" ];
         searchingActiveBorderColor = [ "#e5c890" ];
