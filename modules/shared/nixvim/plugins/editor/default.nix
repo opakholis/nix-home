@@ -4,9 +4,10 @@
     ./autopairs.nix
     ./blink.nix
     ./comment.nix
+    ./colorizer.nix
     ./illuminate.nix
-    ./rainbow.nix
     ./indent-blankline.nix
+    ./rainbow.nix
     ./treesitter.nix
     ./trouble.nix
   ];
