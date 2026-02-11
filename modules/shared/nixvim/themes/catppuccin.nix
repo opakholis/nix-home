@@ -37,7 +37,7 @@
           indent_blankline.enabled = true;
           lsp_trouble = true;
           nvimtree = true;
-          telescope.enable = true;
+          snacks.enabled = true;
           treesitter = true;
           which_key = true;
         };
