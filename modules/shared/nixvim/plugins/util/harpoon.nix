@@ -9,7 +9,7 @@
       {
         __unkeyed = "<leader>h";
         group = "Harpoon";
-        icon = " ";
+        icon = " ";
       }
     ];
 
