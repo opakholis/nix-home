@@ -1,36 +1,40 @@
-{ ... }:
+{ pkgs, ... }:
 {
   programs.nixvim = {
     plugins.treesitter = {
       enable = true;
-      settings = {
-        ensure_installed = [
-          "astro"
-          "bash"
-          "css"
-          "html"
-          "javascript"
-          "json"
-          "jsonc"
-          "lua"
-          "luadoc"
-          "markdown"
-          "markdown_inline"
-          "regex"
-          "tsx"
-          "typescript"
-          "yaml"
+      grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+        astro
+        bash
+        comment
+        css
+        diff
+        gitcommit
+        html
+        javascript
+        json
+        json5
+        lua
+        markdown
+        markdown_inline
+        nix
+        regex
+        styled
+        tsx
+        typescript
+        vim
+        vimdoc
+        yaml
+      ];
+      highlight = {
+        enable = true;
+        additional_vim_regex_highlighting = true;
+      };
+      indent = {
+        enable = true;
+        disable = [
+          "ruby"
         ];
-        highlight = {
-          enable = true;
-          additional_vim_regex_highlighting = true;
-        };
-        indent = {
-          enable = true;
-          disable = [
-            "ruby"
-          ];
-        };
       };
     };
 
