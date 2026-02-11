@@ -55,15 +55,12 @@
       };
     };
 
-    keymaps = [
+    plugins.which-key.settings.spec = [
       {
-        mode = "n";
-        key = "<leader>e";
-        action = "<cmd>NvimTreeToggle<cr>";
-        options = {
-          desc = "Explorer";
-          silent = true;
-        };
+        __unkeyed-1 = "<leader>e";
+        __unkeyed-2 = "<cmd>NvimTreeToggle<CR>";
+        desc = "Explorer";
+        icon = " ";
       }
     ];
   };
