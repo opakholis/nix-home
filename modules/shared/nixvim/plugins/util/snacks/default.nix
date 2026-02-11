@@ -2,6 +2,7 @@
 {
   imports = [
     ./lazygit.nix
+    ./scroll.nix
     ./terminal.nix
   ];
 

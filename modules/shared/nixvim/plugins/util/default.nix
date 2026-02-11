@@ -1,7 +1,6 @@
 { ... }:
 {
   imports = [
-    ./cinnamon.nix
     ./snacks.nix
     ./copilot.nix
     ./harpoon.nix
