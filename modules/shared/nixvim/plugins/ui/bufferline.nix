@@ -35,7 +35,7 @@
       {
         __unkeyed = "<leader>b";
         group = "Buffer";
-        icon = " ";
+        icon = " ";
       }
       {
         __unkeyed = "<leader>q";
@@ -80,7 +80,7 @@
       {
         mode = "n";
         key = "<leader>bf";
-        action = "<cmd>Telescope buffers sort_mru=true previewer=false<cr>";
+        action = "<cmd>lua Snacks.picker.buffers()<cr>";
         options = {
           desc = "Find";
         };
