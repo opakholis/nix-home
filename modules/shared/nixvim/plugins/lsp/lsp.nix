@@ -6,6 +6,9 @@
         cssls = {
           enable = true;
         };
+        eslint = {
+          enable = true;
+        };
         html = {
           enable = true;
         };
@@ -19,6 +22,9 @@
           enable = true;
         };
         tailwindcss = {
+          enable = true;
+        };
+        tsgo = {
           enable = true;
         };
       };
@@ -86,7 +92,7 @@
       {
         __unkeyed = "<leader>l";
         group = "LSP";
-        icon = "󱐋";
+        icon = " ";
       }
     ];
   };
