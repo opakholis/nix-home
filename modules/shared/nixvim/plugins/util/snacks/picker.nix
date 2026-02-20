@@ -48,6 +48,40 @@
           };
         };
       };
+      win = {
+        input = {
+          keys = {
+            "<c-d>" = {
+              __unkeyed-1 = "preview_scroll_down";
+              mode = [
+                "n"
+                "i"
+              ];
+            };
+            "<c-u>" = {
+              __unkeyed-1 = "preview_scroll_up";
+              mode = [
+                "n"
+                "i"
+              ];
+            };
+            "<c-b>" = {
+              __unkeyed-1 = "list_scroll_down";
+              mode = [
+                "n"
+                "i"
+              ];
+            };
+            "<c-f>" = {
+              __unkeyed-1 = "list_scroll_up";
+              mode = [
+                "n"
+                "i"
+              ];
+            };
+          };
+        };
+      };
     };
 
     plugins.which-key.settings.spec = [
