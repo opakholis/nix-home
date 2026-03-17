@@ -235,11 +235,6 @@ in
         export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin"
       fi
 
-      # iOS development
-      if [ -s "$HOME/.cargo/env" ]; then
-        source "$HOME/.cargo/env"
-      fi
-
       # Spotify
       if [ -f "$HOME/.spicetify/spicetify" ]; then
         export PATH="$PATH:$HOME/.spicetify/"
