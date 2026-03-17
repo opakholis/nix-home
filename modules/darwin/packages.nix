@@ -17,6 +17,8 @@ shared-packages
   (yarn.override { nodejs = stable-24.nodejs_18; })
 
   # react-native development
+  stable.cocoapods
+  stable.ruby
   stable.ios-deploy
   zulu17
 
