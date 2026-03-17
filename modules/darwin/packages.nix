@@ -24,7 +24,6 @@ shared-packages
 
   # utilities
   gnupg
-  openssl
   reattach-to-user-namespace
   ytfzf
 ]

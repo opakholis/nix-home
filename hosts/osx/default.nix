@@ -27,9 +27,6 @@
   };
 
   nixpkgs = {
-    config.permittedInsecurePackages = [
-      "openssl-1.1.1w"
-    ];
     # List of Nixpkgs overlays.
     overlays = [
       outputs.overlays.stable-packages
